@@ -1,0 +1,876 @@
+# RANCID-CONTENT-TYPE: juniper
+#
+# FALC-ECFL2-08> show chassis clocks 
+# FALC-ECFL2-08> show chassis environment 
+# Class Item                           Status
+# Power FPC 0 Power Supply 0           OK        
+#       FPC 0 Power Supply 1           Absent    
+#       FPC 0 Power Supply 2           Absent    
+#       FPC 0 Power Supply 3           Absent    
+# Temp  FPC 0 CPU                      OK        
+#       FPC 0 EX-PFE1                  OK        
+#       FPC 0 GEPHY Front Left         OK        
+#       FPC 0 GEPHY Front Right        OK        
+#       FPC 0 Uplink Conn              OK        
+# Fans  FPC 0 Fan 1                    OK
+# 
+# FALC-ECFL2-08> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    uboot      U-Boot 1.1.6 (Mar 26 2011 - 04:42:33) 1.0.0
+#                          loader     FreeBSD/PowerPC U-Boot bootstrap loader 2.4
+# 
+# FALC-ECFL2-08> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                  512 MB
+# 
+# FALC-ECFL2-08> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                BH0208204104      EX3200-24T
+# Routing Engine 0 REV 07   750-021261   BH0208204104      EX3200-24T, 8 POE
+# Routing Engine 0                       BH0208204104      EX3200-24T, 8 POE
+# FPC 0            REV 07   750-021261   BH0208204104      EX3200-24T, 8 POE
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0                   BUILTIN      BUILTIN           24x 10/100/1000 Base-T
+# Power Supply 0   REV 03   740-020957   AT0508183652      PS 320W AC
+# Fan Tray                                                 Fan Tray
+# 
+# FALC-ECFL2-08> show chassis routing-engine 
+# Routing Engine status:
+#   Slot 0:
+#     Current state                  Master
+#     Election priority              Master (default)
+#     DRAM                       512 MB
+#     Model                          EX3200-24T, 8 POE
+#     Serial ID                      BH0208204104
+# 
+# FALC-ECFL2-08> show chassis scb 
+# FALC-ECFL2-08> show chassis sfm detail 
+# FALC-ECFL2-08> show chassis ssb 
+# FALC-ECFL2-08> show chassis feb detail 
+# FALC-ECFL2-08> show chassis feb 
+# FALC-ECFL2-08> show chassis cfeb 
+# FALC-ECFL2-08> show chassis alarms 
+# No alarms currently active
+# 
+# FALC-ECFL2-08> show system license 
+# License usage: none
+# 
+# Licenses installed: none
+# 
+# FALC-ECFL2-08> show system boot-messages 
+# Copyright (c) 1996-2011, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2006 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# Timecounter "decrementer" frequency 37500000 Hz quality 0
+# cpu0: Freescale e500v2 core revision 2.2
+# cpu0: HID0 80004080<EMCP,TBEN,EN_MAS7_UPDATE>
+# ETHERNET SOCKET BRIDGE initialising
+# Initializing EXSERIES platform properties ...
+# nexus0: <PPC e500 Nexus device>
+# ocpbus0: <on-chip peripheral bus> on nexus0
+# openpic0: <OpenPIC in on-chip peripheral bus> iomem 0xfef40000-0xfef600b3 on ocpbus0
+# memctl0: <mpc85xx memory error reporting> iomem 0xfef20000-0xfef20e5b,0xfef02000-0xfef02e5b irq 32,34 on ocpbus0
+# ECC not enabled to report errors 0xc3000000
+# device_attach: memctl0 attach returned 6
+# i2c0: <MPC85XX OnChip i2c Controller> iomem 0xfef03000-0xfef03014 irq 59 on ocpbus0
+# i2c1: <MPC85XX OnChip i2c Controller> iomem 0xfef03100-0xfef03114 irq 59 on ocpbus0
+# uart0: <16550 or compatible> iomem 0xfef04500-0xfef0450f irq 58 on ocpbus0
+# uart0: console (9600,n,8,1)
+# uart1: <16550 or compatible> iomem 0xfef04600-0xfef0460f irq 58 on ocpbus0
+# lbc0: <Freescale 8533 Local Bus Controller> iomem 0xfef05000-0xfef05fff,0xff000000-0xffffffff irq 22 on ocpbus0
+# cfi0: <AMD/Fujitsu - 8MB> iomem 0xff800000-0xffffffff on lbc0
+# syspld0 iomem 0xff000000-0xff00ffff on lbc0
+# tsec0: <eTSEC ethernet controller> iomem 0xfef24000-0xfef24fff irq 45,46,50 on ocpbus0
+# tsec0: hardware MAC address 00:1f:12:33:3b:bf
+# miibus0: <MII bus> on tsec0
+# e1000phy0: <Marvell 88E1112 Gigabit PHY> on miibus0
+# e1000phy0:  10baseT, 10baseT-FDX, 100baseTX, 100baseTX-FDX, 1000baseTX-FDX, auto
+# pcib0: <Freescale MPC8544 PCI host controller> iomem 0xfef08000-0xfef08fff,0xf0000000-0xf3ffffff on ocpbus0
+# pci0: <PCI bus> on pcib0
+# pci0: <serial bus, USB> at device 18.0 (no driver attached)
+# ehci0: <Philips ISP156x USB 2.0 controller> mem 0xf0001000-0xf00010ff irq 22 at device 18.2 on pci0
+# usb0: EHCI version 1.0
+# usb0: <Philips ISP156x USB 2.0 controller> on ehci0
+# usb0: USB revision 2.0
+# uhub0: Philips EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 2 ports with 2 removable, self powered
+# umass0: STMicroelectronics ST72682  High Speed Mode, rev 2.00/2.10, addr 2
+# pcib1: <Freescale MPC8544 PCI Express host controller> iomem 0xfef0a000-0xfef0afff,0xe0000000-0xe3ffffff,0xec000000-0xec0fffff irq 42 on ocpbus0
+# pci1: <PCI bus> on pcib1
+# pcib2: <PCI-PCI bridge> at device 0.0 on pci1
+# pci2: <PCI bus> on pcib2
+# mpfe0: <Juniper EX-series Packet Forwarding Engine> mem 0xa4000000-0xa40fffff,0xa0000000-0xa3ffffff irq 18 at device 0.0 on pci2
+# idma0: <mp85xxx DMA Controller> iomem 0xfef21000-0xfef21300 irq 36 on ocpbus0
+# Initializing product: 36 ..
+# bmeb: bmeb_lib_init done 0x81f0f800, addr 0x808e272c
+# bme0:Virtual BME driver initializing
+# Timecounters tick every 1.000 msec
+# Loading the NETPFE picpeer module
+# IPsec: Initialized Security Association Processing.
+# da0 at umass-sim0 bus 0 target 0 lun 0
+# da0: <ST ST72682 2.10> Removable Direct Access SCSI-2 device
+# da0: 40.000MB/s transfers
+# da0: 1000MB (2048000 512 byte sectors: 64H 32S/T 1000C)
+# Trying to mount root from ufs:/dev/da0s1a
+# 
+# FALC-ECFL2-08> show system core-dumps 
+# 
+# FALC-ECFL2-08> show version detail 
+# Hostname: FALC-ECFL2-08
+# Model: ex3200-24t
+# JUNOS Base OS boot [10.4R4.5]
+# JUNOS Base OS Software Suite [10.4R4.5]
+# JUNOS Kernel Software Suite [10.4R4.5]
+# JUNOS Crypto Software Suite [10.4R4.5]
+# JUNOS Online Documentation [10.4R4.5]
+# JUNOS Enterprise Software Suite [10.4R4.5]
+# JUNOS Packet Forwarding Engine Enterprise Software Suite [10.4R4.5]
+# JUNOS Routing Software Suite [10.4R4.5]
+# JUNOS Web Management [10.4R4.5]
+# KERNEL 10.4R4.5 #0 built by builder on 2011-05-06 05:43:08 UTC
+# MGD release 10.4R4.5 built by builder on 2011-05-06 05:50:30 UTC
+# CLI release 10.4R4.5 built by builder on 2011-05-06 05:00:50 UTC
+# RPD release 10.4R4.5 built by builder on 2011-05-06 05:25:00 UTC
+# CHASSISD release 10.4R4.5 built by builder on 2011-05-06 05:50:51 UTC
+# DFWD release 10.4R4.5 built by builder on 2011-05-06 05:49:42 UTC
+# DCD release 10.4R4.5 built by builder on 2011-05-06 05:18:52 UTC
+# SNMPD release 10.4R4.5 built by builder on 2011-05-06 05:25:39 UTC
+# MIB2D release 10.4R4.5 built by builder on 2011-05-06 05:23:42 UTC
+# VRRPD release 10.4R4.5 built by builder on 2011-05-06 05:26:03 UTC
+# ALARMD release 10.4R4.5 built by builder on 2011-05-06 05:19:25 UTC
+# PFED release 10.4R4.5 built by builder on 2011-05-06 05:49:50 UTC
+# RMOPD release 10.4R4.5 built by builder on 2011-05-06 05:19:04 UTC
+# COSD release 10.4R4.5 built by builder on 2011-05-06 05:16:55 UTC
+# FUD release 10.4R4.5 built by builder on 2011-05-06 05:21:29 UTC
+# HTTPD-GK release 10.4R4.5 built by builder on 2011-05-06 05:57:47 UTC
+# DHCPD release 10.4R4.5 built by builder on 2011-05-06 05:50:03 UTC
+# RDD release 10.4R4.5 built by builder on 2011-05-06 05:18:24 UTC
+# LACPD release 10.4R4.5 built by builder on 2011-05-06 05:22:54 UTC
+# LFMD release 10.4R4.5 built by builder on 2011-05-06 05:18:16 UTC
+# CFMD release 10.4R4.5 built by builder on 2011-05-06 05:54:47 UTC
+# AUTHD release 10.4R4.5 built by builder on 2011-05-06 05:19:03 UTC
+# BDBREPD release 10.4R4.5 built by builder on 2011-05-06 05:19:50 UTC
+# KMD release 10.4R4.5 built by builder on 2011-05-06 05:50:00 UTC
+# SENDD release 10.4R4.5 built by builder on 2011-05-06 05:19:42 UTC
+# VCCPD release 10.4R4.5 built by builder on 2011-05-06 05:51:55 UTC
+# CHASSISM release 10.4R4.5 built by builder on 2011-05-06 05:51:39 UTC
+# LLDPD release 10.4R4.5 built by builder on 2011-05-06 05:55:36 UTC
+# LFMD release 10.4R4.5 built by builder on 2011-05-06 05:18:16 UTC
+# ESWD release 10.4R4.5 built by builder on 2011-05-06 05:54:51 UTC
+# DOT1XD release 10.4R4.5 built by builder on 2011-05-06 05:57:16 UTC
+# SFLOWD release 10.4R4.5 built by builder on 2011-05-06 05:56:51 UTC
+# AUTOD release 10.4R4.5 built by builder on 2011-05-06 05:49:58 UTC
+# CFMD release 10.4R4.5 built by builder on 2011-05-06 05:54:47 UTC
+# PPMD release 10.4R4.5 built by builder on 2011-05-06 05:18:32 UTC
+# LRMUXD release 10.4R4.5 built by builder on 2011-05-06 05:23:12 UTC
+# PGMD release 10.4R4.5 built by builder on 2011-05-06 05:24:21 UTC
+# BFDD release 10.4R4.5 built by builder on 2011-05-06 05:28:10 UTC
+# SDXD release 10.4R4.5 built by builder on 2011-05-06 05:19:12 UTC
+# AUDITD release 10.4R4.5 built by builder on 2011-05-06 05:19:34 UTC
+# EVENTD release 10.4R4.5 built by builder on 2011-05-06 05:21:17 UTC
+# MCSNOOPD release 10.4R4.5 built by builder on 2011-05-06 05:55:47 UTC
+# jroute-dd release 10.4R4.5 built by builder on 2011-05-06 04:25:07 UTC
+# jkernel-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:47 UTC
+# jcrypto-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:20 UTC
+# jcrypto_junos-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:21 UTC
+# jdiameterd-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:26 UTC
+# jdocs-dd release 10.4R4.5 built by builder on 2011-05-06 04:20:22 UTC
+# jkernel_esp-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:08 UTC
+# mcsnoop_esp-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:11 UTC
+# services_esp-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:14 UTC
+# autod-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:04 UTC
+# jswitch-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:14 UTC
+# jswitch_ex-dd release 10.4R4.5 built by builder on 2011-05-06 04:24:02 UTC
+#
+# FALC-ECFL2-08> show configuration 
+## Last commit: 2013-04-02 16:46:26 EDT by root
+version 10.4R4.5;
+system {
+    host-name FALC-ECFL2-08;
+    time-zone America/New_York;
+    root-authentication {
+        encrypted-password "$1$n9XYxR5y$KXWESb/kGjqibK.IdSIvH1";
+    }
+    name-server {
+        10.1.3.15;
+        10.1.3.50;
+    }
+    login {
+        class configer {
+            permissions all;
+            allow-commands "show configuration";
+        }
+        user config {
+            uid 2001;
+            class configer;
+            authentication {
+                encrypted-password "$1$AgNQHp.J$3e8bAacRnv0WRTvqdlNBS0";
+            }
+        }
+        user test {
+            uid 2000;
+            class operator;
+            authentication {
+                encrypted-password "$1$RnJRnlMA$WDPj4mrOcvzEDv6lAHbhi/";
+            }
+        }
+    }
+    services {
+        ssh;
+        telnet;
+        web-management {
+            http;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        host 172.16.9.16 {
+            any warning;
+            facility-override local3;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    archival {
+        configuration {
+            transfer-on-commit;
+            archive-sites {
+                "scp://root@172.16.9.18/switchbackup" password "$9$RiDSye7NbsYoM8VYgojiAp0ISrKM8NVwLX";
+            }
+        }
+    }
+    ntp {
+        server 64.90.182.55;
+    }
+}
+chassis {
+    alarm {
+        management-ethernet {
+            link-down ignore;
+        }
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        description A146;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN54;
+                }
+            }
+        }
+    }
+    ge-0/0/1 {
+        description B214;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/2 {
+        description A126;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN59;
+                }
+            }
+        }
+    }
+    ge-0/0/3 {
+        description A129;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/4 {
+        description A130;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/5 {
+        description B242;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/6 {
+        description B221;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/7 {
+        description B221;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/8 {
+        description A125;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN59;
+                }
+            }
+        }
+    }
+    ge-0/0/9 {
+        description A128;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/10 {
+        description B259;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/11 {
+        description B207;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/12 {
+        description B208;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN31;
+                }
+            }
+        }
+    }
+    ge-0/0/13 {
+        description B207A;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/14 {
+        description A173;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN59;
+                }
+            }
+        }
+    }
+    ge-0/0/15 {
+        description A186;
+        disable;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/16 {
+        description A204;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/17 {
+        description B209A;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/18 {
+        description B216B;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/19 {
+        description A148;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/20 {
+        description A200;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/21 {
+        description B261;
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode full-duplex;
+            speed {
+                100m;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode access;
+                vlan {
+                    members VLAN32;
+                }
+            }
+        }
+    }
+    ge-0/0/22 {
+        description "Uplink to FALC-ECFL2-01";
+        unit 0 {
+            family ethernet-switching {
+                port-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    ge-0/0/23 {
+        description "Spare Uplink";
+        mtu 1514;
+        ether-options {
+            auto-negotiation;
+            no-flow-control;
+            link-mode automatic;
+            speed {
+                auto-negotiation;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                port-mode trunk;
+            }
+        }
+    }
+    xe-0/1/0 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    xe-0/1/1 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    vlan {
+        unit 9 {
+            family inet {
+                address 172.16.9.38/24;
+            }
+        }
+    }
+}
+snmp {
+    community FalconStor {
+        authorization read-only;
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 172.16.9.1;
+    }
+}
+protocols {
+    rstp;
+    lldp {
+        interface all;
+    }
+}
+ethernet-switching-options {
+    voip;
+}
+vlans {
+    Management {
+        description Management;
+        vlan-id 9;
+        l3-interface vlan.9;
+    }
+    VLAN31 {
+        description "VLAN 31";
+        vlan-id 31;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN32 {
+        description "VLAN 32";
+        vlan-id 32;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN33 {
+        description "VLAN 33";
+        vlan-id 33;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN34 {
+        description "VLAN 34";
+        vlan-id 34;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN35 {
+        description "VLAN 35";
+        vlan-id 35;
+    }
+    VLAN41 {
+        description "VLAN 41";
+        vlan-id 41;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN42 {
+        description "VLAN 42";
+        vlan-id 42;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN43 {
+        description "VLAN 43";
+        vlan-id 43;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN44 {
+        description "VLAN 44";
+        vlan-id 44;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN51 {
+        description "VLAN 51";
+        vlan-id 51;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN52 {
+        description "VLAN 52";
+        vlan-id 52;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN54 {
+        description "VLAN 54";
+        vlan-id 54;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN57 {
+        description "VLAN 57";
+        vlan-id 57;
+        interface {
+            ge-0/0/23.0;
+        }
+    }
+    VLAN58 {
+        description "VLAN 58";
+        vlan-id 58;
+    }
+    VLAN59 {
+        description "Inside Sales";
+        vlan-id 59;
+    }
+}
+poe {
+    interface all;
+}

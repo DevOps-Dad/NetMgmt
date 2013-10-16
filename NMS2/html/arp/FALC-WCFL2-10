@@ -1,0 +1,129 @@
+172.16.9.60
+spawn ssh -c 3des -x -l test 172.16.9.60
+test@172.16.9.60's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-WCFL2-10> 
+
+test@FALC-WCFL2-10> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-WCFL2-10> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-WCFL2-10> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-WCFL2-10> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 493 entries, 474 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:1f:12:35:26:00 Static         - Router
+  VLAN32            00:0c:29:67:eb:2c Learn          0 ge-0/0/15.0
+  VLAN32            00:1c:2e:c4:46:70 Learn          0 ge-0/0/15.0
+  VLAN32            00:24:e8:78:1f:23 Learn          0 ge-0/0/15.0
+  VLAN32            00:24:e8:78:58:04 Learn          0 ge-0/0/15.0
+  VLAN32            00:50:56:6c:8a:a2 Learn       2:31 ge-0/0/15.0
+  VLAN32            00:50:56:6c:c6:59 Learn       1:13 ge-0/0/15.0
+  VLAN54            00:03:ff:90:4d:3f Learn       1:34 ge-0/0/4.0
+  VLAN54            00:03:ff:91:4d:3f Learn          0 ge-0/0/4.0
+  VLAN54            00:04:23:df:2a:6b Learn          0 ge-0/0/4.0
+  VLAN54            00:0c:29:b9:1a:d4 Learn       1:13 ge-0/0/4.0
+  VLAN54            00:1b:21:09:e6:4a Learn       1:14 ge-0/0/4.0
+  VLAN54            00:1d:92:42:da:8d Learn          0 ge-0/0/4.0
+  VLAN54            00:1e:4f:95:4d:3f Learn       2:44 ge-0/0/4.0
+  VLAN75            00:04:23:b7:9f:ae Learn          0 ge-0/0/11.0
+  VLAN75            00:0e:0c:4e:59:df Learn       1:11 ge-0/0/11.0
+  VLAN75            00:15:17:5b:74:05 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:17:ba:f7:7a Learn       2:01 ge-0/0/11.0
+  VLAN75            00:15:5d:05:46:04 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:c5:e2:43:84 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:21:32 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:23:12 Learn         38 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:23:14 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:23:82 Learn          0 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:25:00 Learn         34 ge-0/0/11.0
+  VLAN75            00:15:c5:f6:78:48 Learn          0 ge-0/0/11.0
+  VLAN75            00:1c:23:d8:3a:f1 Learn          0 ge-0/0/11.0
+  VLAN75            00:22:19:07:9f:87 Learn          0 ge-0/0/11.0
+  VLAN75            00:22:19:90:99:6c Learn          0 ge-0/0/11.0
+  VLAN75            00:26:b9:3c:23:2b Learn       1:44 ge-0/0/11.0
+  VLAN75            00:50:56:47:62:5d Learn       3:28 ge-0/0/11.0
+  VLAN75            00:50:56:73:26:37 Learn       4:39 ge-0/0/11.0
+  VLAN75            00:50:56:82:00:00 Learn         45 ge-0/0/11.0
+  VLAN75            00:50:56:82:00:05 Learn       3:17 ge-0/0/11.0
+  VLAN75            00:50:56:82:00:06 Learn       1:12 ge-0/0/11.0
+  VLAN75            00:50:56:96:22:1e Learn       1:16 ge-0/0/11.0
+  VLAN75            00:50:56:b8:64:ab Learn       3:44 ge-0/0/11.0
+  VLAN75            74:86:7a:d4:15:bc Learn         39 ge-0/0/11.0
+  VLAN75            78:2b:cb:0d:97:2a Learn          0 ge-0/0/11.0
+  VLAN822           00:01:55:35:8a:28 Learn       1:18 ge-0/0/5.0
+  VLAN822           00:03:ba:50:0e:0d Learn       1:55 ge-0/0/5.0
+  VLAN822           00:04:23:bc:b7:e8 Learn          0 ge-0/0/5.0
+  VLAN822           00:04:23:d3:34:bc Learn          0 ge-0/0/5.0
+  VLAN822           00:05:1e:35:a3:cf Learn       1:22 ge-0/0/5.0
+  VLAN822           00:05:1e:f5:2d:f1 Learn       1:07 ge-0/0/5.0
+  VLAN822           00:05:33:a6:b1:60 Learn       2:59 ge-0/0/5.0
+  VLAN822           00:05:33:a7:5f:46 Learn       1:32 ge-0/0/5.0
+  VLAN822           00:0c:29:02:60:a9 Learn       1:34 ge-0/0/5.0
+  VLAN822           00:0c:29:02:60:b3 Learn       1:35 ge-0/0/5.0
+  VLAN822           00:0c:29:1a:3e:16 Learn       1:28 ge-0/0/5.0
+  VLAN822           00:0c:29:45:ae:9b Learn       1:07 ge-0/0/5.0
+  VLAN822           00:0c:29:54:6c:8f Learn          0 ge-0/0/5.0
+  VLAN822           00:0c:29:54:6c:99 Learn       1:27 ge-0/0/5.0
+  VLAN822           00:0c:29:5b:c6:1b Learn          0 ge-0/0/5.0
+  VLAN822           00:0c:29:5b:c6:25 Learn          0 ge-0/0/5.0
+  VLAN822           00:0c:29:5e:e2:af Learn         38 ge-0/0/5.0
+  VLAN822           00:0c:29:76:0f:c9 Learn       1:05 ge-0/0/5.0
+  VLAN822           00:0c:29:a5:5e:89 Learn          0 ge-0/0/5.0
+  VLAN822           00:0c:29:ad:fe:ae Learn          0 ge-0/0/5.0
+  VLAN822           00:0c:29:d3:97:bb Learn       2:19 ge-0/0/5.0
+  VLAN822           00:0c:29:d5:b7:ab Learn       1:32 ge-0/0/5.0
+  VLAN822           00:0c:29:d5:b7:b5 Learn       1:29 ge-0/0/5.0
+  VLAN822           00:0c:29:d5:b7:bf Learn       1:16 ge-0/0/5.0
+  VLAN822           00:0c:41:1a:5a:00 Learn       1:39 ge-0/0/5.0
+  VLAN822           00:15:17:6a:24:8a Learn         43 ge-0/0/5.0
+  VLAN822           00:15:17:6a:24:8c Learn          0 ge-0/0/5.0
+  VLAN822           00:1a:4b:bf:35:da Learn       4:12 ge-0/0/5.0
+  VLAN822           00:1b:78:b8:78:0a Learn       3:00 ge-0/0/5.0
+  VLAN822           00:1c:23:db:a2:3f Learn       1:07 ge-0/0/5.0
+  VLAN822           00:1c:23:db:a2:41 Learn       1:10 ge-0/0/5.0
+  VLAN822           00:1e:0b:7c:5e:fa Learn       1:46 ge-0/0/5.0
+  VLAN822           00:1e:0b:7c:5e:fe Learn       1:43 ge-0/0/5.0
+  VLAN822           00:26:b9:35:33:33 Learn       1:47 ge-0/0/5.0
+  VLAN822           00:26:b9:35:33:3b Learn       1:05 ge-0/0/5.0
+  VLAN822           00:26:b9:56:c2:2d Learn       2:46 ge-0/0/5.0
+  VLAN822           00:26:b9:56:c2:35 Learn         51 ge-0/0/5.0
+  VLAN822           00:26:b9:56:e0:40 Learn       1:08 ge-0/0/5.0
+  VLAN822           00:26:b9:56:e0:48 Learn       1:14 ge-0/0/5.0
+  VLAN822           00:30:48:77:05:40 Learn          0 ge-0/0/5.0
+  VLAN822           78:2b:cb:0c:1e:95 Learn       1:17 ge-0/0/5.0
+  VLAN822           78:2b:cb:0c:25:f4 Learn       1:13 ge-0/0/5.0
+  VLAN822           78:2b:cb:0c:28:99 Learn       1:13 ge-0/0/5.0
+  VLAN822           78:2b:cb:0c:38:e2 Learn       3:48 ge-0/0/5.0
+  VLAN822           78:2b:cb:0c:38:e8 Learn       1:17 ge-0/0/5.0
+  VLAN822           78:2b:cb:15:79:b8 Learn          0 ge-0/0/5.0
+  VLAN822           78:2b:cb:15:79:c0 Learn       1:32 ge-0/0/5.0
+  VLAN822           78:2b:cb:21:1f:21 Learn       1:10 ge-0/0/5.0
+  VLAN822           78:2b:cb:62:78:36 Learn       1:15 ge-0/0/5.0
+  VLAN822           78:2b:cb:62:78:5e Learn       1:15 ge-0/0/5.0
+  VLAN822           84:2b:2b:6c:c9:b0 Learn       1:45 ge-0/0/5.0
+  VLAN822           84:2b:2b:6c:c9:b8 Learn       1:02 ge-0/0/5.0
+  VLAN822           a4:ba:db:1c:32:c6 Learn       1:23 ge-0/0/5.0
+  VLAN822           a4:ba:db:1c:32:ce Learn       1:33 ge-0/0/5.0
+  VLAN822           a4:ba:db:1c:d4:5a Learn       1:13 ge-0/0/5.0
+  VLAN822           a4:ba:db:1c:d4:62 Learn       1:04 ge-0/0/5.0
+  VLAN822           a4:ba:db:1e:25:9a Learn          0 ge-0/0/5.0
+  VLAN822           a4:ba:db:1e:25:a2 Learn       1:28 ge-0/0/5.0
+  VLAN822           a4:ba:db:3d:9f:6a Learn          0 ge-0/0/5.0
+  VLAN822           a4:ba:db:3d:9f:72 Learn       1:28 ge-0/0/5.0
+  VLAN822           a4:ba:db:73:97:ae Learn       2:19 ge-0/0/5.0
+  VLAN822           a4:ba:db:75:e7:7a Learn       3:27 ge-0/0/5.0
+  VLAN822           b0:c6:9a:df:46:00 Learn          0 ge-0/0/5.0
+  VLAN822           b0:c6:9a:df:46:1a Learn          0 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:af:a7 Learn       1:01 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c6:83 Learn       1:22 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c6:8b Learn       1:32 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c7:0a Learn       2:05 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c7:12 Learn       1:02 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c9:e4 Learn       2:43 ge-0/0/5.0
+  VLAN822           d4:ae:52:69:c9:ec Learn       1:15 ge-0/0/5.0
+
+test@FALC-WCFL2-10> quit 
+
+Connection to 172.16.9.60 closed.

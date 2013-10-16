@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+
+## GetARP 1.1
+## By Joe Goldberg
+## Not licensed for redistribution
+## Copyright 2008 FalconStor Software
+
+use CGI qw(:standard);
+use Net::MAC;
+
+$vlan_name = param('vlan_name') || 'xxx';
+
+# Print HTML Header
+print <<ENDHEAD;
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FalconStor IP and MAC Address Details</title>
+<style type="text/css">
+.style1 {
+	text-align: center;
+	font-size: large;
+	border-width: 2px;
+	background-color: #FFFF99;
+}
+.style3 {
+	text-align: center;
+	font-size: x-large;
+}
+.style5 {
+	text-align: center;
+	border-width: 2px;
+}
+</style>
+
+</head>
+<body>
+<p class="style3"><strong>IP and MAC Address Details</strong></p>
+<p>&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+		<td class="style1"><strong>Edge Switch</strong></td>
+		<td class="style1"><strong>IP Address</strong></td>
+		<td class="style1"><strong>VLAN</strong></td>
+		<td class="style1"><strong>Switch Port</strong></td>
+		<td class="style1"><strong>Location</strong></td>
+	</tr>
+ENDHEAD
+
+
+# Get Juniper matching MAC addresses
+$vlan_grep = `/bin/grep $vlan_name /var/www/html/arp/* | /bin/sed 's_/var/www/html/arp/__'`;
+
+@vlan_split = split (/\n/, $vlan_grep);
+
+foreach $vline (@vlan_split){
+
+	@vlan_break = split (/ /, $vline);
+		
+	foreach $vlan_line (@vlan_break) {
+
+		if (substr($vlan_line, 0, 4) eq "FALC") {
+			$temp_switch_name = $vlan_line;
+		}
+		if (substr($vlan_line, 0, 4) eq "VLAN") {
+			$temp_vlan = $vlan_line
+		}
+		if ((substr($vlan_line, 0, 1) eq "g") && substr($vlan_line, 1, 1) eq "e") {
+                      	$temp_switch_port = $vlan_line;
+		}
+       	        if ((substr($temp_switch_port, 7, 2) ne "22") && (substr($temp_switch_port, 7, 2) ne "23") && (substr($temp_switch_port, 7, 2) ne "")) {
+			$switch_port = substr($temp_switch_port, 0, - 3);
+			$switch_name = substr($temp_switch_name, 0, - 1);
+			$vlan = $temp_vlan;
+           	}
+	}
+
+	# Get Location
+
+        $loc = `/bin/grep -w $switch_port /var/www/html/arp/desc/$switch_name`;
+
+        $location = substr($loc, -7);
+
+	print "<tr>";
+	print "<td class=\"style5\"><strong>$switch_name</strong></td>";
+	print "<td class=\"style5\"><strong>$ip_address</strong></td>";
+	print "<td class=\"style5\"><strong>$vlan</strong></td>";
+	print "<td class=\"style5\"><strong>$switch_port</strong></td>";
+	print "<td class=\"style5\"><strong>$location</strong></td>";
+	print "</tr>";
+
+}

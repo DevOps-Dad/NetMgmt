@@ -1,0 +1,4 @@
+AuthType Basic
+AuthUserFile /etc/httpd/conf/falc-users
+AuthName "FalconStor Staff Only"
+Require valid-user

@@ -1,0 +1,54 @@
+10.3.3.62
+spawn ssh -c 3des -x -l test 10.3.3.62
+test@10.3.3.62's password: 
+--- JUNOS 9.1R2.10 built 2008-07-01 04:34:43 UTC
+test@Juniper-Test> 
+
+test@Juniper-Test> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@Juniper-Test> set cli screen-length 0 
+Screen length set to 0
+
+test@Juniper-Test> show ethernet-switching table 
+Ethernet-switching table: 35 entries, 33 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  default           *                 Flood          - All-members
+  default           00:00:0c:07:ac:01 Learn          0 ge-0/0/0.0
+  default           00:01:6c:2b:64:3e Learn       2:10 ge-0/0/0.0
+  default           00:04:5a:6b:fd:92 Learn         30 ge-0/0/9.0
+  default           00:04:75:53:f4:48 Learn       4:50 ge-0/0/22.0
+  default           00:0c:f1:9b:48:cd Learn          0 ge-0/0/8.0
+  default           00:0c:f1:c7:99:e2 Learn          0 ge-0/0/9.0
+  default           00:0c:f1:de:5a:dd Learn       2:11 ge-0/0/0.0
+  default           00:0e:0c:3e:7d:cc Learn          0 ge-0/0/0.0
+  default           00:0f:f8:9a:cc:00 Learn          0 ge-0/0/0.0
+  default           00:0f:fe:1a:64:63 Learn       3:17 ge-0/0/0.0
+  default           00:0f:fe:3b:43:bf Learn          0 ge-0/0/0.0
+  default           00:11:11:62:ed:78 Learn       3:43 ge-0/0/0.0
+  default           00:11:11:62:ee:00 Learn       1:20 ge-0/0/0.0
+  default           00:12:44:71:5c:00 Learn          0 ge-0/0/0.0
+  default           00:13:46:66:26:c7 Learn       2:50 ge-0/0/0.0
+  default           00:13:72:31:b5:06 Learn       3:57 ge-0/0/0.0
+  default           00:13:d3:05:1e:e8 Learn       1:39 ge-0/0/0.0
+  default           00:14:85:61:1a:54 Learn          0 ge-0/0/4.0
+  default           00:15:58:83:5b:17 Learn          0 ge-0/0/7.0
+  default           00:19:69:83:a0:4f Learn         58 ge-0/0/12.0
+  default           00:19:69:83:a2:1a Learn         20 ge-0/0/13.0
+  default           00:19:db:57:f1:8f Learn       1:00 ge-0/0/0.0
+  default           00:19:db:bc:b3:03 Learn          0 ge-0/0/10.0
+  default           00:19:db:d3:20:12 Learn          0 ge-0/0/20.0
+  default           00:19:db:d4:7f:8f Learn          0 ge-0/0/14.0
+  default           00:1a:a0:9a:6c:74 Learn       2:19 ge-0/0/0.0
+  default           00:b0:d0:17:f1:d5 Learn       2:34 ge-0/0/0.0
+  default           00:b0:d0:ce:2d:80 Learn       1:59 ge-0/0/0.0
+  default           00:b0:d0:f7:17:ac Learn       1:55 ge-0/0/0.0
+  default           00:e0:29:59:88:24 Learn       1:05 ge-0/0/19.0
+  default           00:e0:4c:f1:6a:a6 Learn       3:12 ge-0/0/0.0
+  default           02:01:00:00:00:00 Learn          0 ge-0/0/8.0
+  Test2             *                 Flood          - All-members
+  Test2             00:15:17:6b:4b:f0 Learn         57 ge-0/0/3.0
+
+test@Juniper-Test> quit 
+
+Connection to 10.3.3.62 closed.

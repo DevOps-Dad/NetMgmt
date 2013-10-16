@@ -1,0 +1,29 @@
+#!/bin/bash
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.27 > /tftpboot/FALC-INTSW-01
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.51 > /tftpboot/FALC-WCFL2-01
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.52 > /tftpboot/FALC-WCFL2-02
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.53 > /tftpboot/FALC-WCFL2-03
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.54 > /tftpboot/FALC-WCFL2-04
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.55 > /tftpboot/FALC-WCFL2-05
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.56 > /tftpboot/FALC-WCFL2-06
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.57 > /tftpboot/FALC-WCFL2-07
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.58 > /tftpboot/FALC-WCFL2-08
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.59 > /tftpboot/FALC-WCFL2-09
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.60 > /tftpboot/FALC-WCFL2-10
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.61 > /tftpboot/FALC-WCFL2-11
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.62 > /tftpboot/FALC-WCFL2-12
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.31 > /tftpboot/FALC-ECFL2-01
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.32 > /tftpboot/FALC-ECFL2-02
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.33 > /tftpboot/FALC-ECFL2-03
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.34 > /tftpboot/FALC-ECFL2-04
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.35 > /tftpboot/FALC-ECFL2-05
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.36 > /tftpboot/FALC-ECFL2-06
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.37 > /tftpboot/FALC-ECFL2-07
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.38 > /tftpboot/FALC-ECFL2-08
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.39 > /tftpboot/FALC-ECFL2-09
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.9.40 > /tftpboot/FALC-ECFL2-10
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.2.20 > /tftpboot/FALC-Border-01
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.2.21 > /tftpboot/FALC-Border-02
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.2.30 > /tftpboot/FALC-Core-01
+/usr/local/rancid/bin/jlogin -f /root/.cloginrc.cfg -c 'show configuration' 172.16.2.31 > /tftpboot/FALC-Core-02
+

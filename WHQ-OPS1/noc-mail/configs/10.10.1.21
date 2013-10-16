@@ -1,0 +1,416 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-320M
+#HW: 0000(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.1.0r2.0
+#Feature: AV-K
+#File Name: ssg320ssg350.6.1.0r2.0, Checksum: 4fa89b95
+#
+set clock ntp
+set clock timezone -5
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+exit
+set service "H.323" timeout 60
+set service "TCP-ANY" timeout 40 
+set service "Bittorrent" protocol tcp src-port 6881-6999 dst-port 0-65535 
+set service "ESP-VPN" protocol tcp src-port 0-65535 dst-port 50-51 
+set service "ESP-VPN" + udp src-port 0-65535 dst-port 50-51 
+set service "Vyatta IPSec VPN" protocol tcp src-port 0-65535 dst-port 500-500 
+set service "Vyatta IPSec VPN" + udp src-port 0-65535 dst-port 500-500 
+set service "Vyatta IPSec VPN" + tcp src-port 0-65535 dst-port 4500-4500 
+set service "Vyatta IPSec VPN" + udp src-port 0-65535 dst-port 4500-4500 
+set service "Vyatta IPSec VPN" + tcp src-port 0-65535 dst-port 50-51 
+set service "Vyatta IPSec VPN" + udp src-port 0-65535 dst-port 50-51 
+unset alg sip enable
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth default auth server "Local"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+#set admin user "config" password <removed> privilege "read-only"
+set admin auth web timeout 10
+set admin auth server "Local"
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+unset zone "VLAN" tcp-rst 
+set zone "Trust" screen icmp-flood
+set zone "Trust" screen winnuke
+set zone "Trust" screen port-scan
+set zone "Trust" screen ip-sweep
+set zone "Trust" screen tear-drop
+set zone "Trust" screen syn-flood
+set zone "Trust" screen ping-death
+set zone "Trust" screen land
+set zone "Trust" screen syn-ack-ack-proxy
+set zone "Trust" screen limit-session destination-ip-based
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set zone "Trust" screen limit-session source-ip-based 1000
+set zone "Trust" screen limit-session destination-ip-based 10000
+set interface id 64 "redundant1" zone "Untrust"
+set interface id 65 "redundant2" zone "Trust"
+set interface "ethernet0/1" zone "HA"
+set interface ethernet0/2 group redundant1
+set interface ethernet0/0 group redundant2
+unset interface vlan1 ip
+set interface redundant1 ip 70.42.78.70/28
+set interface redundant1 route
+set interface redundant2 ip 10.10.1.11/24
+set interface redundant2 nat
+set interface redundant1:1 ip 70.42.78.75/28
+set interface redundant1:1 route
+set interface redundant2:1 ip 10.10.1.12/24
+set interface redundant2:1 nat
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface redundant2 manage-ip 10.10.1.21
+unset interface redundant2 ip manageable
+set interface redundant1:1 ip manageable
+set interface redundant2:1 ip manageable
+set interface redundant1 dip 100 70.42.78.72 70.42.78.72
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set hostname FALC-NOCFW-01
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set nsrp cluster id 1
+set nsrp cluster name FALC-FW-CLUSTER-01
+set nsrp rto-mirror sync
+set nsrp vsd-group id 0 priority 1
+set nsrp vsd-group id 0 preempt
+set nsrp vsd-group id 0 preempt hold-down 10
+set nsrp vsd-group id 1 priority 100
+set nsrp arp 5
+set nsrp secondary-path ethernet0/0
+set dns host dns2 10.5.1.15
+set dns host dns3 0.0.0.0
+set address "Trust" "10.1.1.0" 10.1.1.0 255.255.255.0
+set address "Trust" "10.10.1.0" 10.10.1.0 255.255.255.0
+set address "Trust" "10.11.1.0" 10.11.1.0 255.255.255.0
+set address "Trust" "10.3.3.160/32" 10.3.3.160 255.255.255.255
+set address "Trust" "10.5.50.66/32" 10.5.50.66 255.255.255.255
+set address "Trust" "10.5.6.0" 10.5.6.0 255.255.255.0
+set address "Trust" "10.5.7.0" 10.5.7.0 255.255.255.0
+set address "Trust" "172.19.0.0/16" 172.19.0.0 255.255.0.0
+set address "Trust" "70.42.78.72/32" 70.42.78.72 255.255.255.255
+set address "Trust" "Australia 172.19.5.x/24" 172.19.5.0 255.255.255.0
+set address "Trust" "Back Office (10.5.4.0)" 10.5.4.0 255.255.255.0
+set address "Trust" "Engineering (10.3.0.0)" 10.3.0.0 255.255.0.0
+set address "Trust" "Engineering No Test (10.3.5)" 10.3.5.0 255.255.255.0
+set address "Trust" "FalcDB" 10.1.10.66 255.255.255.255
+set address "Trust" "Fulfillment" 10.5.10.0 255.255.255.0
+set address "Trust" "Inside Sales" 10.5.9.0 255.255.255.0
+set address "Trust" "IT Backend" 172.16.0.0 255.255.0.0
+set address "Trust" "IT Servers (10.1.10.0)" 10.1.10.0 255.255.255.0
+set address "Trust" "IT Servers (10.1.3.0)" 10.1.3.0 255.255.255.0
+set address "Trust" "Juniper Proxy Test" 10.5.30.0 255.255.255.0
+set address "Trust" "Lab Backbone" 10.9.1.0 255.255.255.0
+set address "Trust" "Labs (10.12.0.0)" 10.12.0.0 255.255.0.0
+set address "Trust" "Labs (10.6.0.0)" 10.6.0.0 255.255.0.0
+set address "Trust" "Labs (10.7.0.0)" 10.7.0.0 255.255.0.0
+set address "Trust" "Labs (10.8.0.0)" 10.8.0.0 255.255.0.0
+set address "Trust" "Labs (192.168.13.0)" 192.168.13.0 255.255.255.0
+set address "Trust" "Labs (192.168.15.0)" 192.168.15.0 255.255.255.0
+set address "Trust" "Labs 192.168.11.0" 192.168.11.0 255.255.255.0
+set address "Trust" "Marketing (10.5.8.0)" 10.5.8.0 255.255.255.0
+set address "Trust" "Phones" 10.5.2.0 255.255.255.0
+set address "Trust" "Remote Site LANs (172.19.x.x)" 172.19.0.0 255.255.0.0
+set address "Trust" "SANBox (10.8.6.0)" 10.8.6.0 255.255.255.0
+set address "Trust" "Shanghai LAN" 172.20.0.0 255.255.0.0
+set address "Trust" "Singapore LAN" 172.19.7.1 255.255.255.0
+set address "Trust" "Tech Support 10.4.0.0" 10.4.0.0 255.255.0.0
+set address "Trust" "Training" 10.8.15.0 255.255.255.0
+set address "Trust" "Training Vyatta" 10.8.15.161 255.255.255.255
+set address "Trust" "WAN / VPN" 10.5.3.0 255.255.255.0
+set address "Trust" "Wireless (10.5.50.0)" 10.5.50.0 255.255.255.0
+set address "Untrust" "174.143.179.99/32" 174.143.179.99 255.255.255.255
+set address "Untrust" "69.117.227.237/32" 69.117.227.237 255.255.255.255
+set address "Untrust" "LightPath SIP Test" 216.255.110.17 255.255.255.255
+set group address "Trust" "All Filtered"
+set group address "Trust" "All Filtered" add "10.1.1.0"
+set group address "Trust" "All Filtered" add "10.10.1.0"
+set group address "Trust" "All Filtered" add "10.11.1.0"
+set group address "Trust" "All Filtered" add "10.5.7.0"
+set group address "Trust" "All Filtered" add "172.19.0.0/16"
+set group address "Trust" "All Filtered" add "Australia 172.19.5.x/24"
+set group address "Trust" "All Filtered" add "Engineering (10.3.0.0)"
+set group address "Trust" "All Filtered" add "Engineering No Test (10.3.5)"
+set group address "Trust" "All Filtered" add "Fulfillment"
+set group address "Trust" "All Filtered" add "IT Backend"
+set group address "Trust" "All Filtered" add "IT Servers (10.1.10.0)"
+set group address "Trust" "All Filtered" add "IT Servers (10.1.3.0)"
+set group address "Trust" "All Filtered" add "Lab Backbone"
+set group address "Trust" "All Filtered" add "Remote Site LANs (172.19.x.x)"
+set group address "Trust" "All Filtered" add "Shanghai LAN"
+set group address "Trust" "All Filtered" add "Singapore LAN"
+set group address "Trust" "All Filtered" add "WAN / VPN"
+set group address "Trust" "All Labs"
+set group address "Trust" "All Labs" add "Labs (10.6.0.0)"
+set group address "Trust" "All Labs" add "Labs (10.7.0.0)"
+set group address "Trust" "All Labs" add "Labs (10.8.0.0)"
+set group address "Trust" "All Labs" add "Labs (192.168.13.0)"
+set group address "Trust" "All Labs" add "Labs (192.168.15.0)"
+set group address "Trust" "All Labs" add "Labs 192.168.11.0"
+set group address "Trust" "All Unfiltered"
+set group address "Trust" "All Unfiltered" add "10.5.7.0"
+set group address "Trust" "All Unfiltered" add "Back Office (10.5.4.0)"
+set group address "Trust" "All Unfiltered" add "IT Test Network (10.5.1)"
+set group address "Trust" "All Unfiltered" add "Juniper Proxy Test"
+set group address "Trust" "All Unfiltered" add "Phones"
+set group address "Trust" "All Unfiltered" add "SANBox (10.8.6.0)"
+set group address "Trust" "Block List"
+set group service "IPSec VPN"
+set group service "IPSec VPN" add "ESP-VPN"
+set group service "IPSec VPN" add "IKE"
+set group service "IPSec VPN" add "IKE-NAT"
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set attack db sigpack base
+set url protocol type sc-cpa
+set url protocol sc-cpa
+set category "FalconStor White List" url "65.55.202.156/"
+set category "FalconStor White List" url "box.net/"
+set category "FalconStor White List" url "bulldog.draftfreak.com/"
+set category "FalconStor White List" url "plaxo.com/"
+set category "FalconStor White List" url "translate.google.com/"
+set category "FalconStor White List" url "webmail.winelibrary.com/"
+set category "FalconStor White List" url "www.box.net/"
+set category "FalconStor White List" url "www.foldershare.com/"
+set category "FalconStor White List" url "www.hyperip.com/"
+set category "FalconStor White List" url "www.kj.com/"
+set category "FalconStor White List" url "www.nylottery.org/"
+set category "FalconStor White List" url "www.plaxo.com/"
+set category "Marketing White List" url "ak1.boxcdn.net/"
+set category "Marketing White List" url "box.net/"
+set category "Marketing White List" url "bulldog.draftfreak.com/"
+set category "Marketing White List" url "contactus.anheuser-busch.com/"
+set category "Marketing White List" url "dl.box.net/"
+set category "Marketing White List" url "translate.google.com/"
+set category "Marketing White List" url "upload.box.net/"
+set category "Marketing White List" url "www.anheuser-busch.com/"
+set category "Marketing White List" url "www.box.net/"
+set category "Marketing White List" url "www.canterburypark.com/"
+set category "Marketing White List" url "www.castellosandonato.it/"
+set category "Marketing White List" url "www.facebook.com/"
+set category "Marketing White List" url "www.foldershare.com/"
+set category "Marketing White List" url "www.georgiawines.com/"
+set category "Marketing White List" url "www.hyperip.com/"
+set category "Marketing White List" url "www.technorati.com/"
+set category "Marketing White List" url "www.thebigm.com/"
+set category "Marketing White List" url "www.wineenthusiast.com/"
+set category "Marketing White List" url "www.youtube.com/"
+set category "FalconStor Black List" url "adobe.us.to/"
+set category "FalconStor Black List" url "hulu.com/"
+set category "FalconStor Black List" url "members.multimania.co.uk/"
+set category "FalconStor Black List" url "netflix.com/"
+set category "FalconStor Black List" url "prankdial.com/"
+set category "FalconStor Black List" url "www.hulu.com/"
+set category "FalconStor Black List" url "www.netflix.com/"
+set category "FalconStor Black List" url "www.prankdial.com/"
+set category "Marketing Black List" url "members.multimania.co.uk/"
+set category "Bad List White List" url "www.austintravel.com/"
+set profile "FalconStor" "FalconStor Black List" black-list
+set profile "FalconStor" "FalconStor White List" white-list
+set profile "FalconStor" "Adult/Sexually Explicit" block
+set profile "FalconStor" "Criminal Skills" block
+set profile "FalconStor" "Drugs, Alcohol & Tobacco" block
+set profile "FalconStor" "Gambling" block
+set profile "FalconStor" "Hacking" block
+set profile "FalconStor" "Personals & Dating" block
+set profile "FalconStor" "Sex Education" block
+set profile "FalconStor" "Violence" block
+set profile "FalconStor" "Weapons" block
+set profile "Marketing" "Marketing Black List" black-list
+set profile "Marketing" "Marketing White List" white-list
+set profile "Marketing" "Adult/Sexually Explicit" block
+set profile "Marketing" "Criminal Skills" block
+set profile "Marketing" "Gambling" block
+set profile "Marketing" "Hacking" block
+set profile "Marketing" "Hate Speech" block
+set profile "Marketing" "Remote Proxies" block
+set profile "Marketing" "Sex Education" block
+set profile "Marketing" "Violence" block
+set profile "Shit List" "Bad List White List" white-list
+set profile "Shit List" "Adult/Sexually Explicit" block
+set profile "Shit List" "Advertisements" block
+set profile "Shit List" "Arts & Entertainment" block
+set profile "Shit List" "Criminal Skills" block
+set profile "Shit List" "Drugs, Alcohol & Tobacco" block
+set profile "Shit List" "Finance & Investment" block
+set profile "Shit List" "Gambling" block
+set profile "Shit List" "Games" block
+set profile "Shit List" "Glamour & Intimate Apparel" block
+set profile "Shit List" "Government & Politics" block
+set profile "Shit List" "Hacking" block
+set profile "Shit List" "Hate Speech" block
+set profile "Shit List" "Health & Medicine" block
+set profile "Shit List" "Hobbies & Recreation" block
+set profile "Shit List" "Hosting Sites" block
+set profile "Shit List" "Job Search & Career Development" block
+set profile "Shit List" "Kids Sites" block
+set profile "Shit List" "Lifestyle & Culture" block
+set profile "Shit List" "Motor Vehicles" block
+set profile "Shit List" "Personals & Dating" block
+set profile "Shit List" "Photo Searches" block
+set profile "Shit List" "Real Estate" block
+set profile "Shit List" "Reference" block
+set profile "Shit List" "Religion" block
+set profile "Shit List" "Remote Proxies" block
+set profile "Shit List" "Sex Education" block
+set profile "Shit List" "Shopping" block
+set profile "Shit List" "Streaming Media" block
+set profile "Shit List" "Travel" block
+set profile "Shit List" "Usenet News" block
+set profile "Shit List" "Violence" block
+set profile "Shit List" "Weapons" block
+set profile "TechSupport" "FalconStor Black List" black-list
+set profile "TechSupport" "FalconStor White List" white-list
+set profile "TechSupport" "Adult/Sexually Explicit" block
+set profile "TechSupport" "Criminal Skills" block
+set profile "TechSupport" "Drugs, Alcohol & Tobacco" block
+set profile "TechSupport" "Gambling" block
+set profile "TechSupport" "Hacking" block
+set profile "TechSupport" "Hate Speech" block
+set profile "TechSupport" "Personals & Dating" block
+set profile "TechSupport" "Sex Education" block
+set profile "TechSupport" "Violence" block
+set profile "TechSupport" "Weapons" block
+set enable
+set fail-mode permit
+set deny-message "Your page is blocked due to a security policy that prohibits access to $URL_CATEGORY"
+exit
+set policy id 15 disable
+set policy id 15
+set log session-init
+exit
+set policy id 12 name "Shit List" from "Trust" to "Untrust"  "Block List" "Any" "ANY" permit url-filter 
+set policy id 12 disable
+set policy id 12
+set url protocol sc-cpa profile "Shit List"
+exit
+set policy id 7 name "Production SMTP" from "Trust" to "Untrust"  "FalcDB" "Any" "SMTP" nat src permit log 
+set policy id 7
+set src-address "IT Servers (10.1.3.0)"
+set log session-init
+exit
+set policy id 5 name "Block Stupid Stuff" from "Trust" to "Untrust"  "Any" "Any" "Bittorrent" reject 
+set policy id 5
+set service "GNUTELLA"
+set service "IRC"
+set service "MS-SQL"
+set service "SMTP"
+set service "SNMP"
+set service "SUN-RPC-ANY"
+set service "TELNET"
+set service "X-WINDOWS"
+exit
+set policy id 2 name "Unfiltered" from "Trust" to "Untrust"  "All Unfiltered" "Any" "ANY" nat src permit log traffic
+set policy id 2
+set log session-init
+exit
+set policy id 8 name "Wireless" from "Trust" to "Untrust"  "Wireless (10.5.50.0)" "Any" "ANY" nat src permit log url-filter traffic
+set policy id 8
+set log session-init
+set url protocol sc-cpa profile "FalconStor"
+exit
+set policy id 13 name "Inside Sales" from "Trust" to "Untrust"  "Inside Sales" "Any" "ANY" nat src permit log url-filter traffic gbw 2500 mbw 5000
+set policy id 13
+set log session-init
+set url protocol sc-cpa profile "FalconStor"
+exit
+set policy id 4 from "Trust" to "Untrust"  "Tech Support 10.4.0.0" "Any" "ANY" nat src permit log url-filter 
+set policy id 4
+set src-address "Training"
+set url protocol sc-cpa profile "TechSupport"
+exit
+set policy id 6 name "Test" from "Trust" to "Untrust"  "Marketing (10.5.8.0)" "Any" "ANY" nat src permit log url-filter traffic gbw 10000 mbw 20000
+set policy id 6
+set log session-init
+set url protocol sc-cpa profile "Marketing"
+exit
+set policy id 3 name "Labs" from "Trust" to "Untrust"  "All Labs" "Any" "ANY" nat src permit log url-filter traffic gbw 2500 mbw 5000
+set policy id 3
+set log session-init
+set url protocol sc-cpa profile "FalconStor"
+exit
+set policy id 1 name "Test" from "Trust" to "Untrust"  "All Filtered" "Any" "ANY" nat src permit log url-filter traffic gbw 5000 mbw 20000
+set policy id 1
+set log session-init
+set url protocol sc-cpa profile "FalconStor"
+exit
+set policy id 14 from "Untrust" to "Trust"  "Any" "All Filtered" "ANY" permit 
+set policy id 14
+exit
+set syslog config "172.16.9.16"
+set syslog src-interface redundant2
+set syslog enable
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+set ntp server "64.90.182.55"
+set ntp interval 60
+set snmp community "FalconSt0r" Read-Only Trap-off version v2c  
+set snmp host "FalconSt0r" 172.16.9.0 255.255.255.0 src-interface redundant2 
+set snmp host "FalconSt0r" 10.5.4.0 255.255.255.0 src-interface redundant2 
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset add-default-route
+set route 0.0.0.0/0 interface redundant1 gateway 70.42.78.66
+set route 10.0.0.0/8 interface redundant2 gateway 10.10.1.10
+set route 172.16.0.0/16 interface redundant2 gateway 10.10.1.10
+set route 192.168.15.0/24 interface redundant2 gateway 10.10.1.10
+set route 10.5.30.0/24 interface redundant2 gateway 10.10.1.50
+set route 172.19.0.0/16 interface redundant2 gateway 10.10.1.10
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

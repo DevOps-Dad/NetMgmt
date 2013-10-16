@@ -1,0 +1,4 @@
+configure
+set policy-options prefix-list bad-guys 210.177.175.188
+commit confirmed 5
+exit

@@ -1,0 +1,41 @@
+172.16.9.33
+spawn ssh -c 3des -x -l test 172.16.9.33
+test@172.16.9.33's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-ECFL2-03> 
+
+test@FALC-ECFL2-03> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-ECFL2-03> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-ECFL2-03> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-ECFL2-03> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 389 entries, 372 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:1f:12:33:28:40 Static         - Router
+  VLAN34            00:03:ba:16:de:11 Learn          0 ge-0/0/17.0
+  VLAN34            00:0f:fe:3b:44:c1 Learn          0 ge-0/0/18.0
+  VLAN34            00:0f:fe:3b:59:6d Learn         46 ge-0/0/14.0
+  VLAN34            00:13:20:17:33:ad Learn          0 ge-0/0/10.0
+  VLAN34            00:13:72:37:fd:ec Learn          0 ge-0/0/11.0
+  VLAN34            00:15:c5:5f:5f:60 Learn          0 ge-0/0/10.0
+  VLAN34            00:15:c5:f6:1d:22 Learn          0 ge-0/0/10.0
+  VLAN34            00:15:c5:f6:6f:86 Learn          0 ge-0/0/10.0
+  VLAN34            00:1d:09:98:a2:6b Learn          0 ge-0/0/5.0
+  VLAN34            00:1d:b3:c9:34:20 Learn          0 ge-0/0/1.0
+  VLAN34            00:1d:b3:c9:88:40 Learn          0 ge-0/0/10.0
+  VLAN34            00:1f:b5:21:ac:ec Learn          0 ge-0/0/16.0
+  VLAN34            00:21:cc:be:d2:ae Learn          0 ge-0/0/3.0
+  VLAN34            00:22:15:9a:39:65 Learn          0 ge-0/0/11.0
+  VLAN34            00:22:68:16:f0:55 Learn          0 ge-0/0/18.0
+  VLAN34            00:c0:9f:1e:9f:0c Learn          0 ge-0/0/1.0
+  VLAN34            3c:97:0e:4d:9a:30 Learn          0 ge-0/0/1.0
+  VLAN34            90:b1:1c:6c:26:59 Learn         34 ge-0/0/14.0
+  VLAN34            f0:de:f1:4f:2c:18 Learn          0 ge-0/0/14.0
+  VLAN54            ec:9a:74:33:f3:38 Learn          0 ge-0/0/12.0
+  VLAN59            00:25:b3:f9:a0:a9 Learn         32 ge-0/0/20.0
+
+test@FALC-ECFL2-03> quit 
+
+Connection to 172.16.9.33 closed.

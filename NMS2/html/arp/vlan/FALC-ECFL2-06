@@ -1,0 +1,2 @@
+172.16.9.36
+spawn ssh -c 3des -x -l test 172.16.9.36

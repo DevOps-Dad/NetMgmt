@@ -1,0 +1,27 @@
+172.16.9.39
+spawn ssh -c 3des -x -l test 172.16.9.39
+test@172.16.9.39's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-ECFL2-09> 
+
+test@FALC-ECFL2-09> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-ECFL2-09> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-ECFL2-09> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-ECFL2-09> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 389 entries, 372 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:1f:12:33:35:40 Static         - Router
+  VLAN32            00:22:68:0d:c1:23 Learn          0 ge-0/0/6.0
+  VLAN32            f0:de:f1:e1:c7:23 Learn          0 ge-0/0/5.0
+  VLAN34            a0:42:3f:01:8d:2b Learn       4:30 ge-0/0/4.0
+  VLAN35            00:1c:2e:8c:c8:00 Learn          0 ge-0/0/15.0
+  VLAN35            00:22:68:18:92:e6 Learn          0 ge-0/0/7.0
+  VLAN35            00:22:68:18:98:e9 Learn          0 ge-0/0/15.0
+  VLAN54            10:9a:dd:49:0f:ee Learn          0 ge-0/0/20.0
+
+test@FALC-ECFL2-09> quit 
+
+Connection to 172.16.9.39 closed.

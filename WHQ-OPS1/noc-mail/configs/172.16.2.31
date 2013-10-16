@@ -1,0 +1,1533 @@
+# RANCID-CONTENT-TYPE: juniper
+#
+# FALC-CORE-02> show chassis clocks 
+# FALC-CORE-02> show chassis environment 
+# Class Item                           Status
+# Power FPC 0 Power Supply 0           OK        
+#       FPC 0 Power Supply 1           OK        
+# Temp  FPC 0 CPU                      OK        
+#       FPC 0 EX-PFE1                  OK        
+#       FPC 0 EX-PFE2                  OK        
+#       FPC 0 EX-PFE3                  OK        
+#       FPC 0 GEPHY Front Left         OK        
+#       FPC 0 GEPHY Front Middle       OK        
+#       FPC 0 GEPHY Front Right        OK        
+#       FPC 0 Uplink Conn              OK        
+# Fans  FPC 0 Fan 1                    OK
+#       FPC 0 Fan 2                    OK
+#       FPC 0 Fan 3                    OK
+# 
+# {master:0}
+# FALC-CORE-02> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    uboot      U-Boot 1.1.6 (Feb  6 2008 - 11:27:42)      
+#                          loader     FreeBSD/PowerPC U-Boot bootstrap loader 2.1
+# 
+# {master:0}
+# FALC-CORE-02> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 1024 MB
+# 
+# {master:0}
+# FALC-CORE-02> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                BP0209515612      EX4200-48T
+# Routing Engine 0 REV 19D  750-021254   BP0209515612      EX4200-48T, 8 POE
+# Routing Engine 0                       BP0209515612      EX4200-48T, 8 POE
+# FPC 0            REV 19D  750-021254   BP0209515612      EX4200-48T, 8 POE
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0                   BUILTIN      BUILTIN           48x 10/100/1000 Base-T
+#   BRD            REV 12D  711-021263   AJ0209502377      EX4200-48T, 8 POE
+# Power Supply 0   REV 04   740-020957   AT0509478542      PS 320W AC
+# Power Supply 1   REV 04   740-020957   AT0510021220      PS 320W AC
+# Fan Tray                                                 Fan Tray
+# 
+# {master:0}
+# FALC-CORE-02> show chassis routing-engine 
+# Routing Engine status:
+#   Slot 0:
+#     Current state                  Master
+#     Election priority              Master (default)
+#     DRAM                      1024 MB
+#     Model                          EX4200-48T, 8 POE
+#     Serial ID                      BP0209515612
+# 
+# FALC-CORE-02> show chassis scb 
+# FALC-CORE-02> show chassis sfm detail 
+# FALC-CORE-02> show chassis ssb 
+# FALC-CORE-02> show chassis feb detail 
+# FALC-CORE-02> show chassis feb 
+# FALC-CORE-02> show chassis cfeb 
+# FALC-CORE-02> show chassis alarms 
+# No alarms currently active
+# 
+# {master:0}
+# FALC-CORE-02> show system license 
+# License usage: none
+# 
+# Licenses installed: none
+# 
+# {master:0}
+# FALC-CORE-02> show system boot-messages 
+# Copyright (c) 1996-2010, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2006 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# Timecounter "decrementer" frequency 50000000 Hz quality 0
+# cpu0: Freescale e500v2 core revision 2.2
+# cpu0: HID0 80004080<EMCP,TBEN,EN_MAS7_UPDATE>
+# ETHERNET SOCKET BRIDGE initialising
+# Initializing EXSERIES platform properties ...
+# nexus0: <PPC e500 Nexus device>
+# ocpbus0: <on-chip peripheral bus> on nexus0
+# openpic0: <OpenPIC in on-chip peripheral bus> iomem 0xfef40000-0xfef600b3 on ocpbus0
+# i2c0: <MPC85XX OnChip i2c Controller> iomem 0xfef03000-0xfef03014 irq 59 on ocpbus0
+# i2c1: <MPC85XX OnChip i2c Controller> iomem 0xfef03100-0xfef03114 irq 59 on ocpbus0
+# uart0: <16550 or compatible> iomem 0xfef04500-0xfef0450f irq 58 on ocpbus0
+# uart0: console (9600,n,8,1)
+# uart1: <16550 or compatible> iomem 0xfef04600-0xfef0460f irq 58 on ocpbus0
+# lbc0: <Freescale 8533 Local Bus Controller> iomem 0xfef05000-0xfef05fff,0xff000000-0xffffffff irq 22 on ocpbus0
+# cfi0: <AMD/Fujitsu - 8MB> iomem 0xff800000-0xffffffff on lbc0
+# syspld0 iomem 0xff000000-0xff00ffff on lbc0
+# tsec0: <eTSEC ethernet controller> iomem 0xfef24000-0xfef24fff irq 45,46,50 on ocpbus0
+# tsec0: hardware MAC address b0:c6:9a:da:f2:ff
+# miibus0: <MII bus> on tsec0
+# e1000phy0: <Marvell 88E1112 Gigabit PHY> on miibus0
+# e1000phy0:  10baseT, 10baseT-FDX, 100baseTX, 100baseTX-FDX, 1000baseTX-FDX, auto
+# pcib0: <Freescale MPC8544 PCI host controller> iomem 0xfef08000-0xfef08fff,0xf0000000-0xf3ffffff on ocpbus0
+# pci0: <PCI bus> on pcib0
+# pci0: <serial bus, USB> at device 18.0 (no driver attached)
+# ehci0: <Philips ISP156x USB 2.0 controller> mem 0xf0001000-0xf00010ff irq 22 at device 18.2 on pci0
+# usb0: EHCI version 1.0
+# usb0: <Philips ISP156x USB 2.0 controller> on ehci0
+# usb0: USB revision 2.0
+# uhub0: Philips EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 2 ports with 2 removable, self powered
+# umass0: STMicroelectronics ST72682  High Speed Mode, rev 2.00/2.10, addr 2
+# umass1: USB 2.0 Flash Disk, rev 2.00/1.00, addr 3
+# pcib1: <Freescale MPC8544 PCI Express host controller> iomem 0xfef0a000-0xfef0afff,0xe0000000-0xe3ffffff,0xec000000-0xec0fffff irq 42 on ocpbus0
+# pci1: <PCI bus> on pcib1
+# pcib2: <PCI-PCI bridge> at device 0.0 on pci1
+# pci2: <PCI bus> on pcib2
+# mpfe0: <Juniper EX-series Packet Forwarding Engine> mem 0xa4000000-0xa40fffff,0xa0000000-0xa3ffffff irq 20 at device 0.0 on pci2
+# pcib3: <Freescale MPC8544 PCI Express host controller> iomem 0xfef09000-0xfef09fff,0xe4000000-0xe7ffffff,0xec100000-0xec1fffff irq 41 on ocpbus0
+# pci3: <PCI bus> on pcib3
+# pcib4: <PCI-PCI bridge> at device 0.0 on pci3
+# pci4: <PCI bus> on pcib4
+# mpfe1: <Juniper EX-series Packet Forwarding Engine> mem 0xac000000-0xac0fffff,0xa8000000-0xabffffff irq 18 at device 0.0 on pci4
+# pcib5: <Freescale MPC8544 PCI Express host controller> iomem 0xfef0b000-0xfef0bfff,0xe8000000-0xebffffff,0xec200000-0xec2fffff irq 43 on ocpbus0
+# pci5: <PCI bus> on pcib5
+# pcib6: <PCI-PCI bridge> at device 0.0 on pci5
+# pci6: <PCI bus> on pcib6
+# mpfe2: <Juniper EX-series Packet Forwarding Engine> mem 0xb4000000-0xb40fffff,0xb0000000-0xb3ffffff irq 19 at device 0.0 on pci6
+# idma0: <mp85xxx DMA Controller> iomem 0xfef21000-0xfef21300 irq 36 on ocpbus0
+# Initializing product: 43 ..
+# bme0:Virtual BME driver initializing
+# Timecounters tick every 1.000 msec
+# Loading the NETPFE picpeer module
+# IPsec: Initialized Security Association Processing.
+# da1 at umass-sim1 bus 1 target 0 lun 0
+# da1: <USB 2.0 Flash Disk 0.00> Removable Direct Access SCSI-2 device
+# da1: 40.000MB/s transfers
+# da1: 3855MB (7897087 512 byte sectors: 255H 63S/T 491C)
+# da0 at umass-sim0 bus 0 target 0 lun 0
+# da0: <ST ST72682 2.10> Removable Direct Access SCSI-2 device
+# da0: 40.000MB/s transfers
+# da0: 1000MB (2048000 512 byte sectors: 64H 32S/T 1000C)
+# Trying to mount root from ufs:/dev/da0s1a
+# 
+# {master:0}
+# FALC-CORE-02> show system core-dumps 
+# fpc0:
+# --------------------------------------------------------------------------
+# 
+# {master:0}
+# FALC-CORE-02> show version detail 
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: FALC-CORE-02
+# Model: ex4200-48t
+# JUNOS Base OS boot [10.1R3.7]
+# JUNOS Base OS Software Suite [10.1R3.7]
+# JUNOS Kernel Software Suite [10.1R3.7]
+# JUNOS Crypto Software Suite [10.1R3.7]
+# JUNOS Online Documentation [10.1R3.7]
+# JUNOS Enterprise Software Suite [10.1R3.7]
+# JUNOS Packet Forwarding Engine Enterprise Software Suite [10.1R3.7]
+# JUNOS Routing Software Suite [10.1R3.7]
+# JUNOS Web Management [10.1R3.7]
+# KERNEL 10.1R3.7 #0 built by builder on 2010-07-10 07:17:14 UTC
+# MGD release 10.1R3.7 built by builder on 2010-07-10 07:53:47 UTC
+# CLI release 10.1R3.7 built by builder on 2010-07-10 04:43:25 UTC
+# RPD release 10.1R3.7 built by builder on 2010-07-10 06:42:58 UTC
+# CHASSISD release 10.1R3.7 built by builder on 2010-07-10 07:53:08 UTC
+# DFWD release 10.1R3.7 built by builder on 2010-07-10 07:46:54 UTC
+# DCD release 10.1R3.7 built by builder on 2010-07-10 06:01:40 UTC
+# SNMPD release 10.1R3.7 built by builder on 2010-07-10 06:43:53 UTC
+# MIB2D release 10.1R3.7 built by builder on 2010-07-10 06:38:54 UTC
+# VRRPD release 10.1R3.7 built by builder on 2010-07-10 06:44:22 UTC
+# ALARMD release 10.1R3.7 built by builder on 2010-07-10 06:08:46 UTC
+# PFED release 10.1R3.7 built by builder on 2010-07-10 06:41:43 UTC
+# CRAFTD release 10.1R3.7 built by builder on 2010-07-10 06:15:28 UTC
+# RMOPD release 10.1R3.7 built by builder on 2010-07-10 06:03:29 UTC
+# COSD release 10.1R3.7 built by builder on 2010-07-10 06:00:23 UTC
+# FUD release 10.1R3.7 built by builder on 2010-07-10 06:24:21 UTC
+# KSYNCD release 10.1R3.7 built by builder on 2010-07-10 06:34:54 UTC
+# HTTPD-GK release 10.1R3.7 built by builder on 2010-07-10 08:01:56 UTC
+# DHCPD release 10.1R3.7 built by builder on 2010-07-10 07:51:51 UTC
+# RDD release 10.1R3.7 built by builder on 2010-07-10 06:00:47 UTC
+# LACPD release 10.1R3.7 built by builder on 2010-07-10 06:36:39 UTC
+# USBD release 10.1R3.7 built by builder on 2010-07-10 04:34:19 UTC
+# LFMD release 10.1R3.7 built by builder on 2010-07-10 06:00:45 UTC
+# AUTHD release 10.1R3.7 built by builder on 2010-07-10 06:02:53 UTC
+# JDIAMETERD release 10.1R3.7 built by builder on 2010-07-10 06:34:08 UTC
+# BDBREPD release 10.1R3.7 built by builder on 2010-07-10 06:12:00 UTC
+# KMD release 10.1R3.7 built by builder on 2010-07-10 07:51:21 UTC
+# SENDD release 10.1R3.7 built by builder on 2010-07-10 06:07:50 UTC
+# VCCPD release 10.1R3.7 built by builder on 2010-07-10 07:57:03 UTC
+# CHASSISM release 10.1R3.7 built by builder on 2010-07-10 07:56:05 UTC
+# LLDPD release 10.1R3.7 built by builder on 2010-07-10 08:00:35 UTC
+# LFMD release 10.1R3.7 built by builder on 2010-07-10 06:00:45 UTC
+# ESWD release 10.1R3.7 built by builder on 2010-07-10 07:58:16 UTC
+# DOT1XD release 10.1R3.7 built by builder on 2010-07-10 08:01:48 UTC
+# SFLOWD release 10.1R3.7 built by builder on 2010-07-10 08:01:32 UTC
+# AUTOD release 10.1R3.7 built by builder on 2010-07-10 07:49:45 UTC
+# PPMD release 10.1R3.7 built by builder on 2010-07-10 06:42:08 UTC
+# LRMUXD release 10.1R3.7 built by builder on 2010-07-10 06:38:08 UTC
+# PGMD release 10.1R3.7 built by builder on 2010-07-10 06:41:56 UTC
+# BFDD release 10.1R3.7 built by builder on 2010-07-10 06:47:57 UTC
+# SDXD release 10.1R3.7 built by builder on 2010-07-10 06:07:38 UTC
+# AUDITD release 10.1R3.7 built by builder on 2010-07-10 06:11:16 UTC
+# EVENTD release 10.1R3.7 built by builder on 2010-07-10 06:22:13 UTC
+# MCSNOOPD release 10.1R3.7 built by builder on 2010-07-10 08:00:06 UTC
+# jroute-dd release 10.1R3.7 built by builder on 2010-07-10 04:20:37 UTC
+# jkernel-dd release 10.1R3.7 built by builder on 2010-07-10 04:20:18 UTC
+# jcrypto-dd release 10.1R3.7 built by builder on 2010-07-10 04:20:06 UTC
+# jcrypto_junos-dd release 10.1R3.7 built by builder on 2010-07-10 04:20:07 UTC
+# jdocs-dd release 10.1R3.7 built by builder on 2010-07-10 04:16:50 UTC
+# jkernel_esp-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:49 UTC
+# mcsnoop_esp-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:52 UTC
+# services_esp-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:54 UTC
+# autod-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:48 UTC
+# jswitch-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:52 UTC
+# jswitch_ex-dd release 10.1R3.7 built by builder on 2010-07-10 04:19:46 UTC
+# {master:0}
+#
+# FALC-CORE-02> show configuration 
+## Last commit: 2012-05-03 17:12:22 EDT by root
+version 10.1R3.7;
+system {
+    host-name FALC-CORE-02;
+    time-zone America/New_York;
+    arp {
+        passive-learning;
+    }
+    root-authentication {
+        encrypted-password /* SECRET-DATA */;
+    }
+    login {
+        class admin {
+            permissions all;
+        }
+        class configer {
+            permissions [ view view-configuration ];
+            allow-commands "show configuration";
+        }
+        user config {
+            uid 2001;
+            class configer;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user jgoldbrg {
+            uid 2000;
+            class admin;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+    }
+    services {
+        ssh;
+        web-management {
+            http {
+                interface [ vlan.9 vlan.52 vlan.54 lo0.0 vlan.53 ];
+            }
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        host 172.16.9.16 {
+            any any;
+            facility-override local3;
+            source-address 172.16.2.31;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    ntp {
+        server 172.16.9.26;
+        server 172.16.9.16;
+        server 172.16.9.18;
+        source-address 172.16.2.31;
+    }
+}
+chassis {
+    alarm {
+        management-ethernet {
+            link-down ignore;
+        }
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/1 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/2 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/3 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/4 {
+        description "West Closet Trunk";
+        unit 0 {
+            family ethernet-switching {
+                port-mode trunk;
+                vlan {
+                    members [ Subnet-172.16.9.x Subnet-10.3.1.x Subnet-10.3.2.x Subnet-10.3.3.x Subnet-10.3.4.x Subnet-10.4.1.x Subnet-10.4.2.x Subnet-10.4.3.x Subnet-10.4.4.x Subnet-10.5.1.x Subnet-10.5.2.x Subnet-10.5.4.x Subnet-10.5.7.x Subnet-10.5.8.x Subnet-10.5.9.x Subnet-10.3.5.x ];
+                }
+            }
+        }
+    }
+    ge-0/0/5 {
+        description "VoIP Network 10.5.6";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.5.6.x;
+                }
+            }
+        }
+    }
+    ge-0/0/6 {
+        description "Management Subnet 172.16.9";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-172.16.9.x;
+                }
+            }
+        }
+    }
+    ge-0/0/7 {
+        description "Subnet 10.5.2 (VoIP and NOC)";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.5.2.x;
+                }
+            }
+        }
+    }
+    ge-0/0/8 {
+        description "Uplink to Labs";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.9.1.x;
+                }
+            }
+        }
+    }
+    ge-0/0/9 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/10 {
+        description "Unprotected DMZ";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-70.42.78.0;
+                }
+            }
+        }
+    }
+    ge-0/0/11 {
+        description "Subnet 10.5.1";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.5.1.x;
+                }
+            }
+        }
+    }
+    ge-0/0/12 {
+        description "Subnet 10.11.1";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.11.1.x;
+                }
+            }
+        }
+    }
+    ge-0/0/13 {
+        description "Subnet 10.1.10";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.1.10.x;
+                }
+            }
+        }
+    }
+    ge-0/0/14 {
+        description "Server Subnet 10.1.3";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.1.3.x;
+                }
+            }
+        }
+    }
+    ge-0/0/15 {
+        description "Security Internal Interfaces";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.10.1.x;
+                }
+            }
+        }
+    }
+    ge-0/0/16 {
+        description "Security External Interfaces";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-70.42.78.65;
+                }
+            }
+        }
+    }
+    ge-0/0/17 {
+        description "Remote Access Subnet (10.5.3)";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.5.3.x;
+                }
+            }
+        }
+    }
+    ge-0/0/18 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/19 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/20 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/21 {
+        description "DC-Colo-01 Uplink";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-172.16.10.x;
+                }
+            }
+        }
+    }
+    ge-0/0/22 {
+        description "Subnet 10.1.1";
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Subnet-10.1.1.x;
+                }
+            }
+        }
+    }
+    ge-0/0/23 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/24 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/25 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/26 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/27 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/28 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/29 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/30 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/31 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/32 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/33 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/34 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/35 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/36 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/37 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/38 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/39 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/40 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/41 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/42 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/0/43 {
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Interswitch5;
+                }
+            }
+        }
+    }
+    ge-0/0/44 {
+        description Uplink_to_DC-Core-01;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Interconnect3;
+                }
+            }
+        }
+    }
+    ge-0/0/45 {
+        description Uplink_to_DC-Core-01;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Interconnect3;
+                }
+            }
+        }
+    }
+    ge-0/0/46 {
+        description Uplink_to_FALC-Border-02;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Interconnect3;
+                }
+            }
+        }
+    }
+    ge-0/0/47 {
+        description Uplink_to_FALC-Border-01;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members Interconnect3;
+                }
+            }
+        }
+    }
+    ge-0/1/0 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    xe-0/1/0 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/1/1 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    xe-0/1/1 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/1/2 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    ge-0/1/3 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                filter {
+                    input router-protect;
+                }
+                address 172.16.2.31/32;
+            }
+        }
+    }
+    vlan {
+        unit 2 {
+            description Uplink_to_Border;
+            family inet {
+                no-redirects;
+                address 70.42.78.101/28;
+            }
+        }
+        unit 3 {
+            description Uplink_to_FALC-Core-02;
+            family inet {
+                address 172.16.5.2/24;
+            }
+        }
+        unit 9 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 172.16.9.3/24 {
+                    vrrp-group 9 {
+                        virtual-address 172.16.9.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 10 {
+            family inet {
+                address 172.16.10.6/30;
+            }
+        }
+        unit 11 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.1.1.3/24 {
+                    vrrp-group 11 {
+                        virtual-address 10.1.1.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 13 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.1.3.4/24 {
+                    vrrp-group 13 {
+                        virtual-address 10.1.3.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 31 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.3.1.16/24 {
+                    vrrp-group 31 {
+                        virtual-address 10.3.1.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 32 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.3.2.16/24 {
+                    vrrp-group 32 {
+                        virtual-address 10.3.2.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 33 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.3.3.18/24 {
+                    vrrp-group 33 {
+                        virtual-address 10.3.3.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 34 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.3.4.7/24 {
+                    vrrp-group 34 {
+                        virtual-address 10.3.4.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 35 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.3.5.3/24 {
+                    vrrp-group 35 {
+                        virtual-address 10.3.5.1;
+                        priority 200;
+                        preempt;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 41 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.4.1.26/24 {
+                    vrrp-group 41 {
+                        virtual-address 10.4.1.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 42 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.4.2.26/24 {
+                    vrrp-group 42 {
+                        virtual-address 10.4.2.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 43 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.4.3.26/24 {
+                    vrrp-group 43 {
+                        virtual-address 10.4.3.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 44 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.4.4.16/24 {
+                    vrrp-group 44 {
+                        virtual-address 10.4.4.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 51 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.1.4/24 {
+                    vrrp-group 51 {
+                        virtual-address 10.5.1.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 52 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.2.10/24 {
+                    vrrp-group 52 {
+                        virtual-address 10.5.2.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 53 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.3.3/24 {
+                    vrrp-group 53 {
+                        virtual-address 10.5.3.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 54 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.4.5/24 {
+                    vrrp-group 54 {
+                        virtual-address 10.5.4.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 56 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.6.3/24 {
+                    vrrp-group 56 {
+                        virtual-address 10.5.6.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 57 {
+            description Subnet-10.5.7.x;
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.7.2/24 {
+                    vrrp-group 57 {
+                        virtual-address 10.5.7.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 58 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.8.2/24 {
+                    vrrp-group 58 {
+                        virtual-address 10.5.8.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 59 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.9.2/24 {
+                    vrrp-group 59 {
+                        virtual-address 10.5.9.1;
+                        preempt;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 91 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.9.1.3/24 {
+                    vrrp-group 91 {
+                        virtual-address 10.9.1.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 110 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.1.10.6/24 {
+                    vrrp-group 110 {
+                        virtual-address 10.1.10.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 111 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.11.1.101/24 {
+                    vrrp-group 111 {
+                        virtual-address 10.11.1.20;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 200 {
+            family inet {
+                address 70.42.78.68/28 {
+                    vrrp-group 200 {
+                        virtual-address 70.42.78.66;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 201 {
+            family inet {
+                address 70.42.78.3/26 {
+                    vrrp-group 201 {
+                        virtual-address 70.42.78.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 210 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.10.1.101/24 {
+                    vrrp-group 210 {
+                        virtual-address 10.10.1.10;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+        unit 510 {
+            family inet {
+                filter {
+                    input Firewall-Proxy;
+                }
+                address 10.5.10.3/24 {
+                    vrrp-group 254 {
+                        virtual-address 10.5.10.1;
+                        priority 200;
+                        accept-data;
+                        authentication-type simple;
+#                        authentication-key <removed> SECRET-DATA */;
+                    }
+                }
+            }
+        }
+    }
+}
+forwarding-options {
+    helpers {
+        bootp {
+            description "Global DHCP Forwarder";
+            server 10.5.7.9;
+            interface {
+                vlan.530;
+                vlan.51;
+                vlan.56;
+                vlan.31;
+                vlan.32;
+                vlan.33;
+                vlan.34;
+                vlan.41;
+                vlan.42;
+                vlan.43;
+                vlan.44;
+                vlan.52;
+                vlan.54;
+                vlan.58;
+                vlan.59;
+                vlan.510;
+                vlan.35;
+            }
+        }
+    }
+}
+snmp {
+    location NOC-Rack-A2;
+    contact Falconstor-IT;
+    community FalconSt0r {
+        authorization read-only;
+    }
+}
+routing-options {
+    interface-routes {
+        rib-group inet FWProxy;
+    }
+    static {
+        route 10.10.10.0/24 next-hop 10.5.3.26;
+        route 10.10.11.0/24 next-hop 10.5.3.26;
+        route 10.20.30.0/24 next-hop 10.5.3.26;
+        route 10.20.31.0/24 next-hop 10.5.3.26;
+        route 172.30.0.0/16 next-hop 10.5.3.26;
+        route 172.31.194.3/32 next-hop 10.5.3.26;
+        route 172.31.194.20/32 next-hop 10.5.3.26;
+        route 172.31.194.21/32 next-hop 10.5.3.26;
+        route 172.31.194.23/32 next-hop 10.5.3.26;
+        route 172.31.194.24/32 next-hop 10.5.3.26;
+        route 192.168.27.52/32 next-hop 10.5.3.26;
+        route 192.168.38.171/32 next-hop 10.5.3.26;
+        route 192.168.38.176/32 next-hop 10.5.3.26;
+        route 70.42.78.128/25 next-hop 70.42.78.77;
+    }
+    rib-groups {
+        FWProxy {
+            import-rib [ inet.0 Firewall.inet.0 DMZ.inet.0 ];
+        }
+    }
+}
+protocols {
+    ospf {
+        export OSPF-Static;
+        area 0.0.0.0 {
+            area-range 70.42.78.80/28;
+            area-range 172.16.2.30/32;
+            area-range 172.16.5.0/24;
+            area-range 10.5.7.0/24;
+            area-range 10.5.30.0/24;
+            area-range 10.10.1.0/24;
+            area-range 70.42.78.64/28;
+            area-range 10.5.1.0/24;
+            area-range 10.1.1.0/24;
+            area-range 10.1.3.0/24;
+            area-range 10.1.10.0/24;
+            area-range 10.3.1.0/24;
+            area-range 10.3.2.0/24;
+            area-range 10.3.3.0/24;
+            area-range 10.3.4.0/24;
+            area-range 10.4.1.0/24;
+            area-range 10.4.3.0/24;
+            area-range 10.4.4.0/24;
+            area-range 10.5.2.0/24;
+            area-range 10.5.3.0/24;
+            area-range 10.5.4.0/24;
+            area-range 172.16.9.0/24;
+            area-range 10.4.2.0/24;
+            area-range 10.5.6.0/24;
+            area-range 10.5.70.0/24;
+            area-range 10.5.8.0/24;
+            area-range 10.9.1.0/24;
+            area-range 10.11.1.0/24;
+            area-range 70.42.78.0/26;
+            area-range 70.42.89.80/28;
+            area-range 70.42.78.96/28;
+            area-range 172.16.10.0/30;
+            area-range 172.16.10.4/30;
+            area-range 70.42.78.128/25;
+            area-range 10.5.9.0/24;
+            area-range 10.5.10.0/24;
+            area-range 10.3.5.0/24;
+            interface vlan.1;
+            interface lo0.0;
+            interface vlan.3;
+            interface vlan.57 {
+                passive;
+            }
+            interface vlan.530 {
+                passive;
+            }
+            interface vlan.210 {
+                passive;
+            }
+            interface vlan.51 {
+                passive;
+            }
+            interface vlan.11 {
+                passive;
+            }
+            interface vlan.13 {
+                passive;
+            }
+            interface vlan.110;
+            interface vlan.31 {
+                passive;
+            }
+            interface vlan.32 {
+                passive;
+            }
+            interface vlan.33 {
+                passive;
+            }
+            interface vlan.34 {
+                passive;
+            }
+            interface vlan.41 {
+                passive;
+            }
+            interface vlan.42 {
+                passive;
+            }
+            interface vlan.43 {
+                passive;
+            }
+            interface vlan.44 {
+                passive;
+            }
+            interface vlan.52;
+            interface vlan.53;
+            interface vlan.9 {
+                passive;
+            }
+            interface vlan.54 {
+                passive;
+            }
+            interface vlan.56;
+            interface vlan.58 {
+                passive;
+            }
+            interface vlan.91;
+            interface vlan.111;
+            interface vlan.200;
+            interface vlan.201;
+            interface vlan.10;
+            interface vlan.59 {
+                passive;
+            }
+            interface vlan.510 {
+                passive;
+            }
+            interface vlan.35 {
+                passive;
+            }
+        }
+    }
+    igmp-snooping {
+        vlan all;
+    }
+    rstp;
+    lldp {
+        interface all;
+    }
+    lldp-med {
+        interface all;
+    }
+}
+policy-options {
+    policy-statement OSPF-Static {
+        from protocol static;
+        then accept;
+    }
+}
+firewall {
+    family inet {
+        filter Firewall-Proxy {
+            term 1 {
+                from {
+                    destination-address {
+                        10.0.0.0/8;
+                        172.16.0.0/16;
+                        192.168.0.0/16;
+                        172.31.194.0/24;
+                        172.30.0.0/16;
+                    }
+                }
+                then {
+                    count InternalCount;
+                    accept;
+                }
+            }
+            term 2 {
+                from {
+                    destination-address {
+                        70.42.78.128/25;
+                    }
+                }
+                then {
+                    count DMZCount;
+                    routing-instance DMZ;
+                }
+            }
+            term 3 {
+                then {
+                    count ProxyCount;
+                    routing-instance Firewall;
+                }
+            }
+        }
+        filter router-protect {
+            term 5 {
+                from {
+                    source-address {
+                        172.16.0.0/16;
+                        10.0.0.0/8;
+                        192.168.0.0/16;
+                        70.42.78.0/24;
+                    }
+                }
+                then {
+                    count Accept-RE;
+                    accept;
+                }
+            }
+            term 10 {
+                from {
+                    source-address {
+                        0.0.0.0/32;
+                    }
+                    destination-address {
+                        255.255.255.255/32;
+                    }
+                }
+                then {
+                    count DHCP-Forward;
+                    accept;
+                }
+            }
+            term 15 {
+                then {
+                    count RE-Protect-Drop;
+                    discard;
+                }
+            }
+        }
+    }
+}
+routing-instances {
+    DMZ {
+        instance-type forwarding;
+        routing-options {
+            static {
+                route 0.0.0.0/0 next-hop 172.16.9.28;
+            }
+        }
+    }
+    Firewall {
+        instance-type forwarding;
+        routing-options {
+            static {
+                route 0.0.0.0/0 next-hop 10.10.1.11;
+            }
+        }
+    }
+}
+vlans {
+    Interconnect3 {
+        vlan-id 1;
+        l3-interface vlan.2;
+    }
+    Interswitch5 {
+        vlan-id 3;
+        l3-interface vlan.3;
+    }
+    Subnet-10.1.1.x {
+        vlan-id 11;
+        l3-interface vlan.11;
+    }
+    Subnet-10.1.10.x {
+        vlan-id 110;
+        l3-interface vlan.110;
+    }
+    Subnet-10.1.3.x {
+        vlan-id 13;
+        l3-interface vlan.13;
+    }
+    Subnet-10.10.1.x {
+        vlan-id 210;
+        l3-interface vlan.210;
+    }
+    Subnet-10.11.1.x {
+        vlan-id 111;
+        l3-interface vlan.111;
+    }
+    Subnet-10.3.1.x {
+        vlan-id 31;
+        l3-interface vlan.31;
+    }
+    Subnet-10.3.2.x {
+        vlan-id 32;
+        l3-interface vlan.32;
+    }
+    Subnet-10.3.3.x {
+        vlan-id 33;
+        l3-interface vlan.33;
+    }
+    Subnet-10.3.4.x {
+        vlan-id 34;
+        l3-interface vlan.34;
+    }
+    Subnet-10.3.5.x {
+        vlan-id 35;
+        l3-interface vlan.35;
+    }
+    Subnet-10.4.1.x {
+        vlan-id 41;
+        l3-interface vlan.41;
+    }
+    Subnet-10.4.2.x {
+        vlan-id 42;
+        l3-interface vlan.42;
+    }
+    Subnet-10.4.3.x {
+        vlan-id 43;
+        l3-interface vlan.43;
+    }
+    Subnet-10.4.4.x {
+        vlan-id 44;
+        l3-interface vlan.44;
+    }
+    Subnet-10.5.1.x {
+        vlan-id 51;
+        l3-interface vlan.51;
+    }
+    Subnet-10.5.10.x {
+        vlan-id 510;
+        l3-interface vlan.510;
+    }
+    Subnet-10.5.2.x {
+        vlan-id 52;
+        l3-interface vlan.52;
+    }
+    Subnet-10.5.3.x {
+        vlan-id 53;
+        l3-interface vlan.53;
+    }
+    Subnet-10.5.4.x {
+        vlan-id 54;
+        l3-interface vlan.54;
+    }
+    Subnet-10.5.6.x {
+        vlan-id 56;
+        l3-interface vlan.56;
+    }
+    Subnet-10.5.7.x {
+        vlan-id 57;
+        l3-interface vlan.57;
+    }
+    Subnet-10.5.8.x {
+        vlan-id 58;
+        l3-interface vlan.58;
+    }
+    Subnet-10.5.9.x {
+        vlan-id 59;
+        l3-interface vlan.59;
+    }
+    Subnet-10.9.1.x {
+        vlan-id 91;
+        l3-interface vlan.91;
+    }
+    Subnet-172.16.10.x {
+        vlan-id 10;
+        l3-interface vlan.10;
+    }
+    Subnet-172.16.9.x {
+        vlan-id 9;
+        l3-interface vlan.9;
+    }
+    Subnet-70.42.78.0 {
+        vlan-id 201;
+        l3-interface vlan.201;
+    }
+    Subnet-70.42.78.0.42;
+    Subnet-70.42.78.65 {
+        vlan-id 200;
+        l3-interface vlan.200;
+    }
+}
+poe {
+    interface all;
+}
+{master:0}

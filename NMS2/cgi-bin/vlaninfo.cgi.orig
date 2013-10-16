@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+
+## VLANInfo 1.0
+## By Joe Goldberg
+## Not licensed for redistribution
+## Copyright 2008 FalconStor Software
+
+use CGI qw(:standard);
+use Net::MAC;
+
+$vlan_name = param('vlan_name') || 'xxx';
+
+# Print HTML Header
+print <<ENDHEAD;
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FalconStor IP and MAC Address Details</title>
+<style type="text/css">
+.style1 {
+        text-align: center;
+        font-size: large;
+        border-width: 2px;
+        background-color: #FFFF99;
+}
+.style3 {
+        text-align: center;
+        font-size: x-large;
+}
+.style5 {
+        text-align: center;
+        border-width: 2px;
+}
+.style6 {
+	background-color: #0000FF;
+        text-align: center;
+        border-width: 2px;
+}
+.style7 {
+	background-color: #00FF00;
+        text-align: center;
+        border-width: 2px;
+}
+	
+</style>
+
+</head>
+<body>
+<p class="style3"><strong>Port Mappings for $vlan_name</strong></p>
+<p>&nbsp;</p>
+<table style="width: 100%">
+        <tr>
+                <td class="style1"><strong>Switch Name</strong></td>
+                <td class="style1"><strong>Switch Port</strong></td>
+        </tr>
+ENDHEAD
+
+$vlan_grep = `/bin/grep -w $vlan_name /var/www/html/arp/* | /bin/sed 's_/var/www/html/arp/__'| /bin/sed 's_:Internet__' | /bin/sed 's_ARPA__'`;
+
+@vlan_line = split (/\n/, $vlan_grep);
+
+$comp_name = "xxx";
+$style = "style6";
+
+foreach $vline (@vlan_line) {
+
+chomp ($vline);
+print "<p> VLINE   $vline </p>";
+
+#$tester = substr($vline, -2);
+#$tester1 = substr($vline, 0, 1);
+
+print "<p> Tester: $tester   Tester1: $tester1</p>";
+
+	if ((substr($vline, -2) == 0) && (substr($vline, 0, 1) eq "F")){
+		$switch_name = substr($vline, 0, 13);
+		if (substr($vline, -8) eq "-") {
+			$switch_port = substr($vline, -13, 10);
+		} else {
+			$switch_port = substr($vline, -12, 9);
+		}
+	}
+
+	if ((substr($switch_port, 7, 2) ne "22") && (substr($switch_port, 7, 2) ne "23") && (substr($switch_port, 0, 1) ne "A")) {
+		print "<tr>";
+		print "<td class=\"$style\"><strong>$switch_name</strong></td>";
+		print "<td class=\"$style\"><strong>$switch_port</strong></td>";
+		print "</tr>";
+	}
+}
+
+

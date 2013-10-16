@@ -1,0 +1,152 @@
+172.16.9.40
+spawn ssh -c 3des -x -l test 172.16.9.40
+test@172.16.9.40's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-ECFL2-10> 
+
+test@FALC-ECFL2-10> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-ECFL2-10> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-ECFL2-10> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-ECFL2-10> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 527 entries, 509 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:19:e2:57:f8:c0 Static         - Router
+  VLAN33            00:1a:a0:1b:af:a0 Learn          0 ge-0/0/0.0
+  VLAN550           00:19:7e:b4:e6:04 Learn          0 ge-0/0/21.0
+  VLAN550           00:1a:13:1d:35:99 Learn       4:40 ge-0/0/21.0
+  VLAN550           00:1e:65:16:76:ca Learn          0 ge-0/0/21.0
+  VLAN550           00:1f:3b:8c:19:7b Learn          0 ge-0/0/21.0
+  VLAN550           00:1f:3b:ae:b8:25 Learn          0 ge-0/0/21.0
+  VLAN550           00:21:5c:02:06:13 Learn          0 ge-0/0/21.0
+  VLAN550           00:21:5d:71:42:fe Learn          0 ge-0/0/21.0
+  VLAN550           00:21:6b:ac:c6:22 Learn          0 ge-0/0/21.0
+  VLAN550           00:21:6b:c6:0f:ee Learn          0 ge-0/0/21.0
+  VLAN550           00:21:6b:cc:5b:3a Learn          0 ge-0/0/21.0
+  VLAN550           00:21:6b:cc:d3:14 Learn          0 ge-0/0/21.0
+  VLAN550           00:22:fa:f5:67:e2 Learn          0 ge-0/0/21.0
+  VLAN550           00:26:c6:3e:4c:7a Learn          0 ge-0/0/21.0
+  VLAN550           00:26:c6:3e:72:3e Learn          0 ge-0/0/21.0
+  VLAN550           00:26:c6:41:4f:34 Learn          0 ge-0/0/21.0
+  VLAN550           00:26:c6:b0:e5:aa Learn          0 ge-0/0/21.0
+  VLAN550           00:26:c7:6f:2b:98 Learn          0 ge-0/0/21.0
+  VLAN550           00:27:10:e3:00:74 Learn          0 ge-0/0/21.0
+  VLAN550           04:0c:ce:e1:f5:50 Learn          0 ge-0/0/21.0
+  VLAN550           04:54:53:e5:eb:f7 Learn       1:11 ge-0/0/21.0
+  VLAN550           04:f7:e4:8f:80:38 Learn          0 ge-0/0/21.0
+  VLAN550           08:11:96:44:39:0c Learn          0 ge-0/0/21.0
+  VLAN550           08:11:96:f3:ae:44 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:5f:39:18 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:74:00:d8 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:7d:4e:cc Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:7d:65:50 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:7f:ea:d8 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:7f:ee:48 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:80:ea:30 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:a0:fc:60 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:db:fa:40 Learn          0 ge-0/0/21.0
+  VLAN550           10:0b:a9:e3:22:3c Learn          0 ge-0/0/21.0
+  VLAN550           10:40:f3:c3:eb:d5 Learn          0 ge-0/0/21.0
+  VLAN550           10:68:3f:37:aa:69 Learn       2:23 ge-0/0/21.0
+  VLAN550           10:68:3f:73:16:b6 Learn          0 ge-0/0/21.0
+  VLAN550           10:bf:48:f4:e1:8d Learn          0 ge-0/0/21.0
+  VLAN550           10:bf:48:f5:22:31 Learn          0 ge-0/0/21.0
+  VLAN550           14:10:9f:cb:ca:08 Learn          0 ge-0/0/21.0
+  VLAN550           14:5a:05:85:ee:8c Learn         38 ge-0/0/21.0
+  VLAN550           18:3d:a2:1c:37:54 Learn          0 ge-0/0/21.0
+  VLAN550           18:9e:fc:c0:63:bd Learn       1:41 ge-0/0/21.0
+  VLAN550           18:af:61:07:c8:d4 Learn          0 ge-0/0/21.0
+  VLAN550           1c:b0:94:91:da:b5 Learn          0 ge-0/0/21.0
+  VLAN550           1c:e6:2b:03:fb:18 Learn       1:14 ge-0/0/21.0
+  VLAN550           20:c9:d0:58:e5:3d Learn          0 ge-0/0/21.0
+  VLAN550           24:ab:81:aa:14:c1 Learn       1:06 ge-0/0/21.0
+  VLAN550           2c:b4:3a:ab:70:1f Learn         41 ge-0/0/21.0
+  VLAN550           34:23:ba:00:62:11 Learn       2:55 ge-0/0/21.0
+  VLAN550           38:aa:3c:25:85:85 Learn          0 ge-0/0/21.0
+  VLAN550           38:aa:3c:52:a9:67 Learn       2:35 ge-0/0/21.0
+  VLAN550           38:aa:3c:89:09:f2 Learn          0 ge-0/0/21.0
+  VLAN550           38:aa:3c:c9:8d:c0 Learn         33 ge-0/0/21.0
+  VLAN550           38:aa:3c:e8:0e:ee Learn          0 ge-0/0/21.0
+  VLAN550           38:aa:3c:f4:fc:c5 Learn          0 ge-0/0/21.0
+  VLAN550           40:6f:2a:c8:9f:33 Learn          0 ge-0/0/21.0
+  VLAN550           40:b0:fa:83:1b:c2 Learn          0 ge-0/0/21.0
+  VLAN550           44:4c:0c:c5:2a:ea Learn         57 ge-0/0/21.0
+  VLAN550           50:ea:d6:44:0b:78 Learn       1:48 ge-0/0/21.0
+  VLAN550           54:26:96:14:f0:58 Learn          0 ge-0/0/21.0
+  VLAN550           54:26:96:16:33:67 Learn          0 ge-0/0/21.0
+  VLAN550           58:b0:35:27:cc:45 Learn       4:52 ge-0/0/21.0
+  VLAN550           58:c3:8b:9b:d9:61 Learn          0 ge-0/0/21.0
+  VLAN550           5c:0a:5b:51:96:e5 Learn          0 ge-0/0/21.0
+  VLAN550           5c:0a:5b:91:f6:86 Learn          0 ge-0/0/21.0
+  VLAN550           5c:0a:5b:fe:08:69 Learn       3:43 ge-0/0/21.0
+  VLAN550           5c:59:48:97:74:8d Learn          0 ge-0/0/21.0
+  VLAN550           5c:96:9d:55:b0:e5 Learn       1:06 ge-0/0/21.0
+  VLAN550           60:67:20:2c:52:a8 Learn          0 ge-0/0/21.0
+  VLAN550           60:67:20:bd:3f:9c Learn          0 ge-0/0/21.0
+  VLAN550           60:67:20:bd:55:fc Learn          0 ge-0/0/21.0
+  VLAN550           60:67:20:d7:89:20 Learn          0 ge-0/0/21.0
+  VLAN550           60:c5:47:58:a9:55 Learn          0 ge-0/0/21.0
+  VLAN550           60:fe:c5:64:7c:9b Learn          0 ge-0/0/21.0
+  VLAN550           64:a3:cb:3e:dc:ed Learn          0 ge-0/0/21.0
+  VLAN550           68:09:27:2f:f6:7c Learn          0 ge-0/0/21.0
+  VLAN550           68:09:27:5d:4b:f8 Learn          0 ge-0/0/21.0
+  VLAN550           68:96:7b:c1:25:58 Learn       1:05 ge-0/0/21.0
+  VLAN550           68:96:7b:ca:28:0a Learn          0 ge-0/0/21.0
+  VLAN550           68:a3:c4:29:82:2d Learn          0 ge-0/0/21.0
+  VLAN550           68:a8:6d:26:0d:36 Learn          0 ge-0/0/21.0
+  VLAN550           74:8e:f8:4f:00:28 Learn          0 ge-0/0/21.0
+  VLAN550           74:e1:b6:d3:57:0b Learn          0 ge-0/0/21.0
+  VLAN550           74:e2:f5:2c:87:3e Learn          0 ge-0/0/21.0
+  VLAN550           78:6c:1c:a1:86:cd Learn          0 ge-0/0/21.0
+  VLAN550           78:a3:e4:4e:ed:83 Learn          0 ge-0/0/21.0
+  VLAN550           80:96:b1:5e:87:88 Learn          0 ge-0/0/21.0
+  VLAN550           84:3a:4b:00:3b:94 Learn          0 ge-0/0/21.0
+  VLAN550           88:1f:a1:71:bd:5f Learn         31 ge-0/0/21.0
+  VLAN550           88:1f:a1:83:dd:d6 Learn          0 ge-0/0/21.0
+  VLAN550           88:53:95:6b:f7:ae Learn       1:16 ge-0/0/21.0
+  VLAN550           88:cb:87:0d:27:a4 Learn       4:24 ge-0/0/21.0
+  VLAN550           8c:58:77:9e:1a:0f Learn          0 ge-0/0/21.0
+  VLAN550           8c:70:5a:20:1b:c0 Learn          0 ge-0/0/21.0
+  VLAN550           8c:70:5a:cb:9b:3c Learn          0 ge-0/0/21.0
+  VLAN550           8c:70:5a:f3:92:88 Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:0f:de:00 Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:70:79:7a Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:70:7b:40 Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:74:02:aa Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:7c:fd:e0 Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:9a:3a:ba Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:9a:42:3c Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:a2:bd:58 Learn          0 ge-0/0/21.0
+  VLAN550           8c:a9:82:ba:4d:2e Learn          0 ge-0/0/21.0
+  VLAN550           90:18:7c:07:b7:5c Learn       2:29 ge-0/0/21.0
+  VLAN550           90:18:7c:15:35:c3 Learn          0 ge-0/0/21.0
+  VLAN550           90:18:7c:16:f8:49 Learn          0 ge-0/0/21.0
+  VLAN550           90:18:7c:44:40:24 Learn       4:39 ge-0/0/21.0
+  VLAN550           98:0c:82:8f:33:48 Learn          0 ge-0/0/21.0
+  VLAN550           98:fe:94:1c:2a:cc Learn         47 ge-0/0/21.0
+  VLAN550           9c:04:eb:3a:a4:bd Learn       1:45 ge-0/0/21.0
+  VLAN550           a0:88:b4:0d:62:80 Learn          0 ge-0/0/21.0
+  VLAN550           a4:d1:d2:c4:3b:74 Learn         50 ge-0/0/21.0
+  VLAN550           a8:26:d9:3f:40:fc Learn          0 ge-0/0/21.0
+  VLAN550           c8:6f:1d:b0:9f:69 Learn          0 ge-0/0/21.0
+  VLAN550           cc:3a:61:22:4d:eb Learn          0 ge-0/0/21.0
+  VLAN550           d0:23:db:14:90:0c Learn       1:02 ge-0/0/21.0
+  VLAN550           d0:23:db:4f:9f:2f Learn       1:42 ge-0/0/21.0
+  VLAN550           d0:23:db:87:e2:5c Learn       2:52 ge-0/0/21.0
+  VLAN550           d8:9e:3f:74:d0:d0 Learn          0 ge-0/0/21.0
+  VLAN550           d8:b3:77:30:3b:9a Learn          0 ge-0/0/21.0
+  VLAN550           e0:06:e6:37:41:61 Learn       2:34 ge-0/0/21.0
+  VLAN550           e0:06:e6:37:5d:07 Learn          0 ge-0/0/21.0
+  VLAN550           e0:75:7d:ba:1d:af Learn          0 ge-0/0/21.0
+  VLAN550           e8:99:c4:76:a8:c4 Learn       2:33 ge-0/0/21.0
+  VLAN550           e8:99:c4:92:b7:29 Learn          0 ge-0/0/21.0
+  VLAN550           ec:85:2f:e2:c0:b8 Learn          0 ge-0/0/21.0
+  VLAN550           f0:4f:7c:7b:d7:fc Learn          0 ge-0/0/21.0
+  VLAN550           f0:a2:25:e0:ea:a0 Learn          0 ge-0/0/21.0
+  VLAN550           f0:b4:79:1c:d7:85 Learn          0 ge-0/0/21.0
+
+test@FALC-ECFL2-10> quit 
+
+Connection to 172.16.9.40 closed.

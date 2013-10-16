@@ -1,0 +1,3 @@
+172.16.9.32
+spawn ssh -c 3des -x -l test 172.16.9.32
+test@172.16.9.32's password: 

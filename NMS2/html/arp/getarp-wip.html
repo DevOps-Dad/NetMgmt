@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:
+office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FalconStor IP and MAC Tracker</title>
+<style type="text/css">
+.style1 {
+        text-align: center;
+	color: #000000;
+}
+.style3 {
+        font-size: large;
+}
+.style4 {
+        font-size: xx-large;
+}
+.style5 {
+        color: #FF0000;
+}
+.style6 {
+	color: #0000FF;
+}
+.style7 {
+	font-size: xx-large;
+	text-align: center;
+}
+.style8 {
+	text-align: center;
+	font-size: large;
+}
+</style>
+</head>
+
+<body>
+<form action="http://172.16.9.18/cgi-bin/getarp.cgi"">
+<div class="style1"><span class="style4">
+        <strong>
+        <a href="http://172.16.9.18/arp/getarp.html">
+        <img alt="LG" src="http://172.16.9.16/logo.gif" border="0" /></a><br />
+        FalconStor Juniper Switch Management</strong><br />
+        <br />
+	IP Address, MAC Address, and Location Tracking</span><br />
+        <strong><span class="style3">Enter an IP address, MAC address 
+	or Location ID.</span></strong><br />
+        <br />
+        <br />
+        <strong>IP Address:</strong> <input name="ip_address" size="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <input type="submit" value="Submit IP Address"></div>
+<div></div>
+</form>
+
+<form action="http://172.16.9.18/cgi-bin/getarp.cgi"">
+<div class="style1"><strong>MAC Address:</strong> <input name="mac_address" size="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Submit MAC Address"><br />
+        <span class="style5"><strong>(Cisco (xxxx.xxxx.xxxx) or Juniper (xx:xx:xx:xx:xx:xx) 
+	format)<br />
+	<br />
+</form>
+
+<form action="http://172.16.9.18/cgi-bin/getloc.cgi"">
+<div class="style1"><strong>Jack Location:</strong> <input name="location" size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Submit Location"><br />
+        <br />
+        </strong><hr style="height: 5px" class="style6" /></span></div>
+</form>
+
+   <FORM ACTION="http://172.16.9.18/cgi-bin/switchinfo.cgi" METHOD=POST>
+        <div class="style1">
+        <P class="style7">Switch Port Information</P>
+			<P class="style8"><strong>Please select the switch and port to 
+			report on.</strong></P>
+
+ <P class="style1"><SELECT NAME="switch_name">
+     <OPTION VALUE="FALC-ECFL2-01">FALC-ECFL2-01
+     <OPTION VALUE="FALC-ECFL2-02">FALC-ECFL2-02
+     <OPTION VALUE="FALC-ECFL2-03">FALC-ECFL2-03
+     <OPTION VALUE="FALC-ECFL2-04">FALC-ECFL2-04
+     <OPTION VALUE="FALC-ECFL2-05">FALC-ECFL2-05
+     <OPTION VALUE="FALC-ECFL2-06">FALC-ECFL2-06
+     <OPTION VALUE="FALC-ECFL2-07">FALC-ECFL2-07
+     <OPTION VALUE="FALC-ECFL2-08">FALC-ECFL2-08
+     <OPTION VALUE="FALC-ECFL2-09">FALC-ECFL2-09
+     <OPTION VALUE="FALC-WCFL2-01">FALC-WCFL2-01
+ </SELECT></P>
+
+ <P class="style1"><SELECT NAME="port_number">
+     <OPTION VALUE="ge-0/0/0">ge-0/0/0
+     <OPTION VALUE="ge-0/0/1">ge-0/0/1
+     <OPTION VALUE="ge-0/0/2">ge-0/0/2
+     <OPTION VALUE="ge-0/0/3">ge-0/0/3
+     <OPTION VALUE="ge-0/0/4">ge-0/0/4
+     <OPTION VALUE="ge-0/0/5">ge-0/0/5
+     <OPTION VALUE="ge-0/0/6">ge-0/0/6
+     <OPTION VALUE="ge-0/0/7">ge-0/0/7
+     <OPTION VALUE="ge-0/0/8">ge-0/0/8
+     <OPTION VALUE="ge-0/0/9">ge-0/0/9
+     <OPTION VALUE="ge-0/0/10">ge-0/0/10
+     <OPTION VALUE="ge-0/0/11">ge-0/0/11
+     <OPTION VALUE="ge-0/0/12">ge-0/0/12
+     <OPTION VALUE="ge-0/0/13">ge-0/0/13
+     <OPTION VALUE="ge-0/0/14">ge-0/0/14
+     <OPTION VALUE="ge-0/0/15">ge-0/0/15
+     <OPTION VALUE="ge-0/0/16">ge-0/0/16
+     <OPTION VALUE="ge-0/0/17">ge-0/0/17
+     <OPTION VALUE="ge-0/0/18">ge-0/0/18
+     <OPTION VALUE="ge-0/0/19">ge-0/0/19
+     <OPTION VALUE="ge-0/0/20">ge-0/0/20
+     <OPTION VALUE="ge-0/0/21">ge-0/0/21
+     <OPTION VALUE="ge-0/0/22">ge-0/0/22
+     <OPTION VALUE="ge-0/0/23">ge-0/0/23
+ </SELECT></P>
+
+ <INPUT TYPE=submit VALUE="Show Report">
+    </div>
+    </FORM>
+
+</strong><hr style="height: 5px" class="style6" /></span>
+
+</form>
+
+   <FORM ACTION="http://172.16.9.18/cgi-bin/vlaninfo.cgi" METHOD=POST>
+        <div class="style1">
+        <P class="style7">VLAN Port Info</P>
+                        <P class="style8"><strong>Please select the VLAN</strong></P>
+
+ <P class="style1"><SELECT NAME="vlan_name">
+     <OPTION VALUE="VLAN31">VLAN31
+     <OPTION VALUE="VLAN32">VLAN32
+     <OPTION VALUE="VLAN33">VLAN33
+     <OPTION VALUE="VLAN34">VLAN34
+     <OPTION VALUE="VLAN41">VLAN41
+     <OPTION VALUE="VLAN42">VLAN42
+     <OPTION VALUE="VLAN43">VLAN43
+     <OPTION VALUE="VLAN44">VLAN44
+     <OPTION VALUE="VLAN52">VLAN52
+     <OPTION VALUE="VLAN54">VLAN54
+     <OPTION VALUE="VLAN57">VLAN57
+ </SELECT></P>
+ <INPUT TYPE=submit VALUE="Show Report">
+    </div>
+    </FORM>
+
+
+</body>
+
+</html>

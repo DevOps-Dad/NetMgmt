@@ -1,0 +1,53 @@
+172.16.9.58
+spawn ssh -c 3des -x -l test 172.16.9.58
+test@172.16.9.58's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-WCFL2-08> 
+
+test@FALC-WCFL2-08> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-WCFL2-08> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-WCFL2-08> show vlans 
+Name           Tag     Interfaces
+Management     9      
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN31         31     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN32         32     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN33         33     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN34         34     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN35         35     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN41         41     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN42         42     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN43         43     
+                       ge-0/0/20.0*, ge-0/0/22.0*, ge-0/0/23.0
+VLAN44         44     
+                       ge-0/0/0.0*, ge-0/0/1.0, ge-0/0/2.0*, ge-0/0/3.0*, ge-0/0/4.0*, ge-0/0/5.0, ge-0/0/6.0, ge-0/0/7.0*, ge-0/0/8.0*, ge-0/0/9.0*, ge-0/0/10.0, ge-0/0/11.0*, ge-0/0/12.0*, ge-0/0/13.0*, ge-0/0/14.0*,
+                       ge-0/0/15.0, ge-0/0/16.0*, ge-0/0/17.0, ge-0/0/18.0, ge-0/0/19.0*, ge-0/0/21.0, ge-0/0/22.0*, ge-0/0/23.0
+VLAN51         51     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN52         52     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN54         54     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN57         57     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN58         58     
+                       ge-0/0/22.0*, ge-0/0/23.0
+VLAN59         59     
+                       ge-0/0/22.0*, ge-0/0/23.0
+default       
+                       None
+
+test@FALC-WCFL2-08> quit 
+
+Connection to 172.16.9.58 closed.

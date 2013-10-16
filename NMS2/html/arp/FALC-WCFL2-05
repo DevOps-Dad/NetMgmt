@@ -1,0 +1,49 @@
+172.16.9.55
+spawn ssh -c 3des -x -l test 172.16.9.55
+test@172.16.9.55's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-WCFL2-05> 
+
+test@FALC-WCFL2-05> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-WCFL2-05> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-WCFL2-05> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-WCFL2-05> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 394 entries, 377 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:19:e2:56:ee:40 Static         - Router
+  VLAN41            00:11:11:62:ed:e8 Learn          0 ge-0/0/0.0
+  VLAN41            00:21:86:56:13:54 Learn          0 ge-0/0/0.0
+  VLAN41            00:21:cc:b9:5d:91 Learn          0 ge-0/0/20.0
+  VLAN42            00:03:ba:09:25:bb Learn          0 ge-0/0/5.0
+  VLAN42            00:0c:f1:7a:e5:d4 Learn          0 ge-0/0/13.0
+  VLAN42            00:0f:fe:3b:43:bf Learn          0 ge-0/0/10.0
+  VLAN42            00:11:32:0c:ee:48 Learn       1:15 ge-0/0/12.0
+  VLAN42            00:13:20:16:61:76 Learn       2:44 ge-0/0/13.0
+  VLAN42            00:15:c5:e2:a4:f0 Learn          0 ge-0/0/19.0
+  VLAN42            00:15:c5:e2:a4:f1 Learn       2:57 ge-0/0/19.0
+  VLAN42            00:19:db:d4:7b:55 Learn          0 ge-0/0/13.0
+  VLAN42            00:1a:a0:1b:ae:4c Learn         39 ge-0/0/8.0
+  VLAN42            00:1a:a0:46:d6:71 Learn          0 ge-0/0/13.0
+  VLAN42            00:1a:a0:9a:6a:63 Learn          0 ge-0/0/4.0
+  VLAN42            00:1c:2e:55:2f:30 Learn          0 ge-0/0/8.0
+  VLAN42            00:1d:09:95:d9:2e Learn          0 ge-0/0/19.0
+  VLAN42            00:1d:09:97:f1:f3 Learn          0 ge-0/0/18.0
+  VLAN42            00:21:9b:09:fb:18 Learn          0 ge-0/0/16.0
+  VLAN42            00:21:9b:18:b3:5c Learn          0 ge-0/0/19.0
+  VLAN42            00:21:cc:bc:81:31 Learn          0 ge-0/0/19.0
+  VLAN42            00:21:cc:bd:a1:fd Learn          0 ge-0/0/8.0
+  VLAN42            00:21:cc:d1:3c:cc Learn          0 ge-0/0/16.0
+  VLAN42            00:23:8b:d1:17:28 Learn          0 ge-0/0/13.0
+  VLAN42            00:24:7e:e1:f7:eb Learn          0 ge-0/0/11.0
+  VLAN42            00:25:64:ed:c0:f6 Learn          0 ge-0/0/8.0
+  VLAN42            78:45:c4:38:c6:79 Learn          0 ge-0/0/11.0
+  VLAN42            98:4b:e1:39:4c:9f Learn       2:04 ge-0/0/14.0
+  VLAN42            f0:de:f1:e7:9d:e3 Learn          0 ge-0/0/5.0
+  VLAN42            f4:ce:46:f4:6f:c3 Learn          0 ge-0/0/19.0
+
+test@FALC-WCFL2-05> quit 
+
+Connection to 172.16.9.55 closed.

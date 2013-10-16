@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:
+office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FalconStor IP and MAC Tracker</title>
+<style type="text/css">
+.style1 {
+        text-align: center;
+	color: #000000;
+}
+.style3 {
+        font-size: large;
+}
+.style4 {
+        font-size: xx-large;
+}
+.style5 {
+        color: #FF0000;
+}
+.style6 {
+	color: #0000FF;
+}
+.style7 {
+	font-size: xx-large;
+	text-align: center;
+}
+.style8 {
+	text-align: center;
+	font-size: large;
+}
+</style>
+</head>
+
+<body>
+<form action="http://172.16.9.18/cgi-bin/zfirewall.cgi"">
+<div class="style1"><span class="style4">
+        <strong>
+        <a href="http://172.16.9.18/arp/getarp.html">
+        <img alt="LG" src="http://172.16.9.16/logo.gif" border="0" /></a><br />
+        FalconStor Juniper Switch Management</strong><br />
+        <br />
+	IP Address, MAC Address, and Location Tracking</span><br />
+        <strong><span class="style3">Enter an IP address, MAC address 
+	or Location ID.</span></strong><br />
+        <br />
+        <br />
+        <strong>Get Current Firewall:</strong>  
+        <input type="submit" value="Submit IP Address"></div>
+<div></div>
+</form>
+
+<form action="http://172.16.9.18/cgi-bin/getarp.cgi"">
+<div class="style1"><strong>MAC Address:</strong> <input name="mac_address" size="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Submit MAC Address"><br />
+        <span class="style5"><strong>(Cisco (xxxx.xxxx.xxxx) or Juniper (xx:xx:xx:xx:xx:xx) 
+	format)<br />
+	<br />
+</form>
+
+<form action="http://172.16.9.18/cgi-bin/getloc.cgi"">
+<div class="style1"><strong>Jack Location:</strong> <input name="location" size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="Submit Location"><br />
+        <br />
+        </strong><hr style="height: 5px" class="style6" /></span></div>
+</form>
+
+<form action="http://172.16.9.18/cgi-bin/repoll.cgi"">
+     <input type="submit" value="Repoll ARP Tables"><br />
+        <br />
+        </strong><hr style="height: 5px" class="style6" /></span></div>
+</form>
+
+
+
+</body>
+
+</html>

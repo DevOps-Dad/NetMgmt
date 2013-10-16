@@ -1,0 +1,35 @@
+172.16.9.32
+spawn ssh -c 3des -x -l test 172.16.9.32
+test@172.16.9.32's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-ECFL2-02> 
+
+test@FALC-ECFL2-02> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-ECFL2-02> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-ECFL2-02> show ethernet-switching table | except ge-0/0/22 | exctest@FALC-ECFL2-02> ... table | except ge-0/0/22 | exce                      pt Flood 
+Ethernet-switching table: 391 entries, 374 learned
+  VLAN	            MAC address       Type         Age Interfaces
+  Management        00:1f:12:33:2a:40 Static         - Router
+  VLAN31            00:0c:29:0e:7a:df Learn       3:31 ge-0/0/12.0
+  VLAN31            00:0c:29:30:e6:72 Learn       1:41 ge-0/0/12.0
+  VLAN31            00:0c:29:7c:43:a3 Learn          0 ge-0/0/12.0
+  VLAN31            00:13:72:1a:ac:ab Learn       3:14 ge-0/0/12.0
+  VLAN31            00:1c:2e:10:d7:70 Learn          0 ge-0/0/0.0
+  VLAN31            00:1d:09:8c:7d:79 Learn          0 ge-0/0/12.0
+  VLAN31            00:1d:b3:c9:46:10 Learn          0 ge-0/0/4.0
+  VLAN31            00:21:cc:4a:70:ca Learn          0 ge-0/0/12.0
+  VLAN31            00:23:54:5a:97:59 Learn          0 ge-0/0/10.0
+  VLAN31            3c:97:0e:1d:3a:aa Learn          0 ge-0/0/3.0
+  VLAN31            a4:ba:db:fe:5d:46 Learn          0 ge-0/0/4.0
+  VLAN35            00:1c:2e:10:c4:50 Learn          0 ge-0/0/19.0
+  VLAN35            00:27:13:b8:0d:a7 Learn          0 ge-0/0/19.0
+  VLAN54            b4:b5:2f:f6:86:55 Learn       1:45 ge-0/0/5.0
+  VLAN54            ec:e0:9b:b0:52:84 Learn          0 ge-0/0/5.0
+
+test@FALC-ECFL2-02> quit 
+
+Connection to 172.16.9.32 closed.

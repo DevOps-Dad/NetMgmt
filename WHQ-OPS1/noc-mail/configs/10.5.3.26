@@ -1,0 +1,495 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: 851 - a 851 router
+!CPU: MPC8272
+!
+!Memory: main 59392K/6144K
+!Memory: nvram 128K
+!
+!Processor ID: FHK11472AA7
+!
+!
+!Image: Software: C850-ADVSECURITYK9-M, 12.4(4)T8, RELEASE SOFTWARE (fc3)
+!Image: Compiled: Sat 11-Aug-07 03:29 by khuie
+!Image: flash:c850-advsecurityk9-mz.124-4.T8.bin
+!
+!ROM Bootstrap: Version 12.3(8r)YI4, RELEASE SOFTWARE
+!Flash: 20480K bytes of processor board System flash (Intel Strataflash)
+!Flash: Directory of flash:/
+!Flash:     2  -rwx    10866948   --- -- ---- --:--:-- -----  c850-advsecurityk9-mz.124-4.T8.bin
+!Flash:     3  -rwx        2254  Feb 28 2002 19:03:48 -05:00  sdmconfig-8xx.cfg
+!Flash:     4  -rwx      861696  Feb 28 2002 19:04:05 -05:00  es.tar
+!Flash:     5  -rwx     1164288  Feb 28 2002 19:04:28 -05:00  common.tar
+!Flash:     6  -rwx        1038  Feb 28 2002 19:04:40 -05:00  home.shtml
+!Flash:     7  -rwx      113152  Feb 28 2002 19:04:53 -05:00  home.tar
+!Flash: 19353600 bytes total (6332416 bytes free)
+!
+!Flash: nvram: Directory of nvram:/
+!Flash: nvram:   110  -rw-       14859                    <no date>  startup-config
+!Flash: nvram:   111  ----        1942                    <no date>  private-config
+!Flash: nvram:     1  ----          46                    <no date>  persistent-data
+!Flash: nvram:     2  -rw-           0                    <no date>  ifIndex-table
+!Flash: nvram:     3  -rw-         595                    <no date>  IOS-Self-Sig#3501.cer
+!Flash: nvram:     4  -rw-         601                    <no date>  IOS-Self-Sig#3502.cer
+!Flash: nvram: 131072 bytes total (110123 bytes free)
+!
+!Interface: FastEthernet0, MPC8272 
+!Interface: FastEthernet0, MPC8272 
+!Interface: FastEthernet0, MPC8272 
+!Interface: FastEthernet0, MPC8272 
+!Interface: FastEthernet4, MPC8272 
+!Slot : fru CISCO851-K9
+!Slot : hvers 2.0 rev A0
+!Slot : part 800-26776-04, serial 
+!
+!NAME: "851",                   DESCR: "851 chassis, Hw Serial#: FHK11472AA7, Hw Revision: 0x200"
+!PID: CISCO851-K9
+!VID: V03
+!SN: FHK11472AA7
+!NAME: "FastEthernet0",         DESCR: "Fast Ethernet"
+!NAME: "FastEthernet1",         DESCR: "Fast Ethernet"
+!NAME: "FastEthernet2",         DESCR: "Fast Ethernet"
+!NAME: "FastEthernet3",         DESCR: "Fast Ethernet"
+!NAME: "FastEthernet4",         DESCR: "PQUICC_FEC"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 0
+!VTP: Maximum VLANs supported locally : 1
+!VTP: Number of existing VLANs        : 5
+!VTP: VTP Operating Mode              : Server
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0xBF 0x86 0x94 0x45 0xFC 0xDF 0xB5 0x70 
+!VTP: Local updater ID is 10.5.3.26 on interface Vl1 (lowest numbered VLAN interface found)
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Fa0, Fa1, Fa2, Fa3
+!VLAN: 1002 fddi-default                     active    
+!VLAN: 1003 token-ring-default               active    
+!VLAN: 1004 fddinet-default                  active    
+!VLAN: 1005 trnet-default                    active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        1002   1003
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        1      1003
+!VLAN: 1003 tr    101003     1500  1005   0      -        -    srb      1      1002
+!VLAN: 1004 fdnet 101004     1500  -      -      1        ibm  -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      1        ibm  -        0      0   
+!
+!
+config-register 0x2102
+!
+version 12.4
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+!
+hostname FALC-P2PVPN-01
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 51200 debugging
+logging console critical
+enable secret 5 $1$GM8f$YgDPnjMsh2dZX0VmrigQo1
+!
+aaa new-model
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!
+aaa session-id common
+!
+resource policy
+!
+clock timezone EST -5
+clock summer-time EST recurring
+ip subnet-zero
+no ip source-route
+!
+no ip cef
+ip tcp synwait-time 10
+no ip bootp server
+ip domain name falconstor.com
+ip name-server 10.1.3.15
+ip name-server 10.1.3.50
+ip ssh time-out 60
+ip ssh authentication-retries 2
+!
+crypto pki trustpoint TP-self-signed-2597337745
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2597337745
+ revocation-check none
+ rsakeypair TP-self-signed-2597337745
+!
+crypto pki certificate chain TP-self-signed-2597337745
+ certificate self-signed 01
+  30820255 308201BE A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32353937 33333737 3435301E 170D3032 30333031 30303035 
+  35305A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 35393733 
+  33373734 3530819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100E8CB D555339B D7B53550 FD1340FE 5EA5BD0C 8154B523 AC1DC21E 6B0C425D 
+  F514ABCD 46394B34 997352EB 1A6BDBD8 0F59919D 214EFEA8 228855F2 FBCED2D0 
+  41EEFBDC 8BFE91E8 2BDAD132 327025EC 2DD64336 287400E0 BCE26ABB D91A64F8 
+  CAE73107 5E959D09 07147111 375AD80C 96B68F59 981BD1F3 EA635E1F DB428032 
+  B2790203 010001A3 7D307B30 0F060355 1D130101 FF040530 030101FF 30280603 
+  551D1104 21301F82 1D46414C 432D5032 5056504E 2D30312E 66616C63 6F6E7374 
+  6F722E63 6F6D301F 0603551D 23041830 16801463 505C7E54 EA180103 CB59CDEE 
+  2EF989FA D4292C30 1D060355 1D0E0416 04146350 5C7E54EA 180103CB 59CDEE2E 
+  F989FAD4 292C300D 06092A86 4886F70D 01010405 00038181 008ED331 06A4010F 
+  E2058C4D B771AC5F 0857DEFE 1BB57CAC 7E714289 D3F828C4 E4885E35 5356D192 
+  62D3F561 C81099CE 590D1E59 82B89AD6 B9E0C727 31EA7039 DD25C1E2 0690A7D5 
+  BF0A3DFF 892C63E6 633317D7 1BF148F0 F231271E 1B0EF1DA 1C010AEF FCFAEC08 
+  DC6334DD B31AB310 A53C3BA4 2B13314E 6C50D492 93B19240 04
+  quit
+username jgoldbrg privilege 15 secret 5 $1$l59O$wUTP90/teyqE9zIf3SAWX/
+!username tac privilege 15 password <removed>
+!
+crypto isakmp policy 1
+ encr 3des
+ authentication pre-share
+ group 2
+!
+crypto isakmp policy 2
+ encr aes
+ authentication pre-share
+ group 2
+!crypto isakmp key <removed> address 74.2.91.114
+!crypto isakmp key <removed> address 68.167.125.50
+!crypto isakmp key <removed> address 6.167.125.50
+!crypto isakmp key <removed> address 58.32.229.74
+!crypto isakmp key <removed> address 99.160.131.230
+!crypto isakmp key <removed> address 64.105.38.42
+!crypto isakmp key <removed> address 173.48.37.218
+!crypto isakmp key <removed> address 63.162.42.45
+!crypto isakmp key <removed> address 60.248.230.220 no-xauth
+!crypto isakmp key <removed> address 208.43.75.162
+!crypto isakmp key <removed> address 122.117.46.122
+!crypto isakmp key <removed> address 58.32.229.76
+!crypto isakmp key <removed> address 199.193.156.193
+!crypto isakmp key <removed> address 118.163.219.13
+!
+crypto ipsec transform-set ESP-3DES-SHA5 esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA6 esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA1 esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA2 esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA3 esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-DES-SHA esp-des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-MD5 esp-3des esp-md5-hmac 
+crypto ipsec transform-set ESP-AES esp-aes esp-sha-hmac 
+!
+crypto map SDM_CMAP_1 1 ipsec-isakmp 
+ description Tunnel to nScaled 
+ set peer 199.193.156.193
+ set transform-set ESP-AES 
+ match address nScaled
+crypto map SDM_CMAP_1 2 ipsec-isakmp 
+ description Tunnel to68.167.125.50
+ set peer 68.167.125.50
+ set transform-set ESP-3DES-SHA3 
+ match address SDM_4
+crypto map SDM_CMAP_1 3 ipsec-isakmp 
+ description Tunnel to 58.32.229.74
+ set peer 68.167.125.50
+ set transform-set ESP-DES-SHA 
+ match address SDM_5
+crypto map SDM_CMAP_1 4 ipsec-isakmp 
+ description Tunnel to 99.160.131.230
+ set peer 99.160.131.230
+ set transform-set ESP-DES-SHA 
+ match address SDM_6
+crypto map SDM_CMAP_1 5 ipsec-isakmp 
+ description Tunnel to 64.105.38.42 
+ set peer 64.105.38.42
+ set transform-set ESP-3DES-SHA3 
+ match address SDM_7
+crypto map SDM_CMAP_1 6 ipsec-isakmp 
+ description Tunnel to173.48.37.218
+ set peer 173.48.37.218
+ set transform-set ESP-3DES-SHA 
+ match address SDM_3
+crypto map SDM_CMAP_1 7 ipsec-isakmp 
+ description Tunnel to SeaChange
+ set peer 63.162.42.45
+ set transform-set ESP-3DES-SHA 
+ match address SC_1
+crypto map SDM_CMAP_1 8 ipsec-isakmp 
+ description Tunnel to Taiwan Office
+ set peer 118.163.219.13
+ set transform-set ESP-3DES-SHA 
+ match address Taiwan
+crypto map SDM_CMAP_1 10 ipsec-isakmp 
+ description Tunnel to MNX
+ set peer 208.43.75.162
+ set transform-set ESP-3DES-SHA 
+ match address MNX
+crypto map SDM_CMAP_1 11 ipsec-isakmp 
+ description Tunnel to Shanghai Office
+ set peer 58.32.229.76
+ set transform-set ESP-3DES-SHA 
+ match address Shanghai
+!
+crypto map rtp 2 ipsec-isakmp 
+ description Tunnel to74.2.91.114
+ set peer 74.2.91.114
+ set transform-set ESP-3DES-SHA5 
+ match address 100
+!
+interface FastEthernet0
+ description Internal Interface
+!
+interface FastEthernet1
+ shutdown
+!
+interface FastEthernet2
+ shutdown
+!
+interface FastEthernet3
+ shutdown
+!
+interface FastEthernet4
+ description External Interface
+ ip address 70.42.78.27 255.255.255.192
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ no ip route-cache
+ duplex auto
+ speed auto
+ crypto map SDM_CMAP_1
+!
+interface Vlan1
+ description Internal VLAN
+ ip address 10.5.3.26 255.255.255.0
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip route-cache flow
+ ip tcp adjust-mss 1200
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 70.42.78.1 permanent
+ip route 10.1.0.0 255.255.0.0 10.5.3.1
+ip route 10.3.0.0 255.255.0.0 10.5.3.1
+ip route 10.4.0.0 255.255.0.0 10.5.3.1
+ip route 10.5.0.0 255.255.0.0 10.5.3.1
+ip route 10.6.0.0 255.255.0.0 10.5.3.1
+ip route 10.7.0.0 255.255.0.0 10.5.3.1
+ip route 10.8.0.0 255.255.0.0 10.5.3.1
+ip route 70.42.78.128 255.255.255.128 10.5.3.1
+ip route 172.16.9.0 255.255.255.0 10.5.3.1
+ip route 192.168.1.0 255.255.255.0 10.5.3.1
+ip route 192.168.9.0 255.255.255.0 10.5.3.1
+ip route 192.168.13.0 255.255.255.0 10.5.3.1
+ip route 192.168.15.0 255.255.255.0 10.5.3.1
+ip route 192.168.100.0 255.255.255.0 10.5.3.1
+ip route 192.168.150.0 255.255.255.0 10.5.3.1
+!
+no ip http server
+ip http authentication local
+ip http secure-server
+ip http timeout-policy idle 60 life 86400 requests 10000
+!
+ip access-list extended MNX
+ remark MNX_ACL Category=4
+ remark IPSec Rule
+ permit ip host 10.5.1.77 host 208.43.75.162
+ permit ip host 70.42.78.169 host 208.43.75.162
+ remark MNX_ACL Category=4
+ remark IPSec Rule
+ip access-list extended SC_1
+ permit ip host 10.5.4.37 host 192.168.38.171
+ permit ip host 192.168.38.171 host 10.5.4.37
+ permit ip host 10.5.4.37 host 172.31.194.3
+ permit ip host 172.31.194.3 host 10.5.4.37
+ permit ip host 192.168.38.176 host 10.5.4.37
+ permit ip host 10.5.4.37 host 192.168.38.176
+ permit ip host 192.168.27.52 host 10.5.4.37
+ permit ip host 10.5.4.37 host 192.168.27.52
+ permit ip host 10.5.4.37 host 172.31.194.20
+ permit ip host 172.31.194.20 host 10.5.4.37
+ permit ip host 10.5.4.37 host 172.31.194.21
+ permit ip host 172.31.194.21 host 10.5.4.37
+ permit ip host 10.5.4.37 host 172.31.194.23
+ permit ip host 172.31.194.23 host 10.5.4.37
+ permit ip host 172.31.194.24 host 10.5.4.37
+ permit ip host 10.5.4.37 host 172.31.194.24
+ip access-list extended SDM_3
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.1.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.3.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.4.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.5.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.6.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.7.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 10.8.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 172.16.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 10.10.10.0 0.0.0.255
+ip access-list extended SDM_4
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.1.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.3.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.4.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.5.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.6.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.7.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 10.8.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 172.16.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 10.10.11.0 0.0.0.255
+ip access-list extended SDM_5
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.0.0.0 0.0.0.255 172.16.50.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.50.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.51.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.51.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.52.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.52.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.53.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.53.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.54.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.54.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.55.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.55.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.56.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.56.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.57.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.57.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.58.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.58.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.59.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.59.0 0.0.0.255
+ permit ip 10.0.0.0 0.0.0.255 172.16.60.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 172.16.60.0 0.0.0.255
+ip access-list extended SDM_6
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.1.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.3.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.4.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.5.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.6.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.7.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 10.8.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 172.16.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 10.20.30.0 0.0.0.255
+ip access-list extended SDM_7
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.1.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.3.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.4.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.5.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.6.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.7.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 10.8.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 172.16.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ permit ip 192.168.0.0 0.0.255.255 10.20.31.0 0.0.0.255
+ip access-list extended Shanghai
+ permit ip 10.0.0.0 0.255.255.255 172.16.0.0 0.0.255.255
+ permit ip 192.168.11.0 0.0.0.255 172.16.0.0 0.0.255.255
+ permit ip 192.168.13.0 0.0.0.255 172.16.0.0 0.0.255.255
+ permit ip 192.168.15.0 0.0.0.255 172.16.0.0 0.0.255.255
+ permit ip 192.168.16.0 0.0.0.255 172.16.0.0 0.0.255.255
+ip access-list extended Taiwan
+ permit ip 10.0.0.0 0.255.255.255 172.30.0.0 0.0.255.255
+ permit ip 172.16.6.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.11.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.13.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.15.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.16.0 0.0.0.255 172.30.0.0 0.0.255.255
+ip access-list extended Taiwan-Backup
+ permit ip 10.1.1.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 10.1.3.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 10.3.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 10.4.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 10.5.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 10.6.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 10.7.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 10.8.0.0 0.0.255.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.11.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.13.0 0.0.0.255 172.30.0.0 0.0.255.255
+ permit ip 192.168.15.0 0.0.0.255 172.30.0.0 0.0.255.255
+ip access-list extended nScaled
+ remark SDM_ACL Category=4
+ remark IPSec Rule
+ permit ip 10.5.10.0 0.0.0.255 192.168.212.0 0.0.0.255
+ permit ip 10.5.10.0 0.0.0.255 172.18.212.0 0.0.0.255
+!
+logging facility local3
+logging 172.16.9.16
+access-list 20 permit 10.5.4.0 0.0.0.255
+access-list 20 permit 172.16.0.0 0.0.255.255
+access-list 100 remark SDM_ACL Category=4
+access-list 100 remark IPSec Rule
+access-list 100 permit ip 10.5.3.0 0.0.0.255 10.10.10.0 0.0.0.255
+access-list 115 remark Acton Data VPN ACL
+access-list 115 permit ip 10.1.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.2.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.3.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.4.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.5.1.0 0.0.0.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.5.2.0 0.0.0.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.5.3.0 0.0.0.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.5.4.0 0.0.0.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.6.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.7.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.8.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 10.10.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+access-list 115 permit ip 172.16.0.0 0.0.255.255 10.5.5.0 0.0.0.255
+snmp-server community FalconStor RO 20
+no cdp run
+!
+control-plane
+!
+banner login ^CCc
+************************************************************************
+FalconStor Hosting owns this computer system and restricts access and 
+use to authorized persons only. Unauthorized or improper use of or 
+access to this system, or any portion of it, either directly or 
+indirectly, or any attempt to deny service to authorized users or to 
+alter, damage, or destroy information, or otherwise to interfere with 
+the system or its operation, is strictly prohibited. Any party using 
+or accessing, or attempting to use or access, this system without 
+express authority from FalconStor Hosting may be subject to severe 
+disciplinary action and/or civil and criminal penalties in accordance 
+with applicable state and federal law (including, but not limited to, 
+the Computer Fraud and Abuse Act of 1986 and the Electronic 
+Communications Privacy Act). FalconStor Hostings representatives may 
+monitor and record use and access for quality assurance, security, 
+performance, and maintenance purposes, except as prohibited by law. 
+Any person who uses or accesses this system expressly consents to such 
+monitoring and recording. FalconStor Hosting or its representatives 
+may furnish information obtained by its monitoring and recording 
+activity to law enforcement officials if such monitoring and recording 
+reveals possible evidence of unlawful activity.
+************************************************************************
+^C
+!
+line con 0
+ no modem enable
+ transport output telnet
+line aux 0
+ transport output telnet
+line vty 0 4
+ transport input ssh
+!
+scheduler max-task-time 5000
+scheduler allocate 4000 1000
+scheduler interval 500
+ntp server 172.16.9.16
+ntp server 172.16.9.18
+ntp server 172.16.9.26
+end

@@ -1,0 +1,41 @@
+172.16.9.39
+spawn ssh -c 3des -x -l test 172.16.9.39
+test@172.16.9.39's password: 
+--- JUNOS 10.4R4.5 built 2011-05-06 05:43:08 UTC
+test@FALC-ECFL2-09> 
+
+test@FALC-ECFL2-09> set cli complete-on-space off 
+Disabling complete-on-space
+
+test@FALC-ECFL2-09> set cli screen-length 0 
+Screen length set to 0
+
+test@FALC-ECFL2-09> show interfaces descriptions 
+Interface       Admin Link Description
+ge-0/0/0        up    down B222
+ge-0/0/1        up    down B264
+ge-0/0/2        up    down B243
+ge-0/0/3        up    down A201
+ge-0/0/4        up    up   A196
+ge-0/0/5        up    up   B244
+ge-0/0/6        up    up   B262
+ge-0/0/7        up    up   A202
+ge-0/0/8        up    down B225
+ge-0/0/9        up    down A178
+ge-0/0/10       up    down A109
+ge-0/0/11       up    down A108
+ge-0/0/12       down  down A187
+ge-0/0/13       up    up   A118
+ge-0/0/14       up    down A198
+ge-0/0/15       up    up   A203
+ge-0/0/16       up    down A205
+ge-0/0/17       up    down A113
+ge-0/0/19       up    down B249
+ge-0/0/20       up    up   A143
+ge-0/0/21       up    down A158
+ge-0/0/22       up    up   Uplink to FALC-ECFL2-01
+ge-0/0/23       up    down Spare Uplink
+
+test@FALC-ECFL2-09> quit 
+
+Connection to 172.16.9.39 closed.

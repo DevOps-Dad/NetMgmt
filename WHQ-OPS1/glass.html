@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<title>FalconStor Looking Glass</title>
+<script type="text/javascript" src="dynamicoptionlist.js"></script>
+</head>
+
+<body onLoad="initDynamicOptionLists()">
+
+<p><img height="110" src="/netglobe.png" width="110"/><img height="90" src="/falconstor.png" width="270"/><font size="20" color="Blue"><b>Looking Glass</b></font></p>
+<br />
+<table width="100%" border="2">
+<tr>
+<td>
+<h1>Melville Location Search</h1>
+<h3>Select Search Type</h3>
+<form action="/cgi-bin/IPloc.py" method="get">
+	<select name="searchtype">
+	<option selected="selected" value="IP">IP Address</option>
+	<option value="MAC">MAC Address</option>
+	<option value="jack">Jack / Cube Number</option>
+	</select><br />
+	<br />
+	Search for:<br />
+	<input name="search" style="width: 227px" type="text" /><br />
+	<br />
+	<br />
+	<input name="Submit1" type="submit" value="Search" /></form>
+</td>
+
+<td>
+<h1>Melville Routers and Switches</h1>
+<h3>Select Router</h3>
+<form action="/cgi-bin/look.py" method="get">
+       <select name="router">
+       <option selected="selected" value="falc-border-01">FALC-Border-01</option>
+       <option value="falc-border-02">FALC-Border-02</option>
+       <option value="falc-core-01">FALC-Core-01</option>
+       <option value="falc-core-02">FALC-Core-02</option>
+       <option value="falc-lab-r01">FALC-LAB-R01</option>
+       <option value="falc-lab-r02">FALC-LAB-R02</option>
+       <option value="falc-ecfl2-01">FALC-ECFL2-01</option>
+       <option value="falc-ecfl2-02">FALC-ECFL2-02</option>
+       <option value="falc-ecfl2-03">FALC-ECFL2-03</option>
+       <option value="falc-ecfl2-04">FALC-ECFL2-04</option>
+       <option value="falc-ecfl2-05">FALC-ECFL2-05</option>
+       <option value="falc-ecfl2-06">FALC-ECFL2-06</option>
+       <option value="falc-ecfl2-07">FALC-ECFL2-07</option>
+       <option value="falc-ecfl2-08">FALC-ECFL2-08</option>
+       <option value="falc-ecfl2-09">FALC-ECFL2-09</option>
+       <option value="falc-ecfl2-10">FALC-ECFL2-10</option>
+       <option value="falc-wcfl2-01">FALC-WCFL2-01</option>
+       <option value="falc-wcfl2-02">FALC-WCFL2-02</option>
+       <option value="falc-wcfl2-03">FALC-WCFL2-03</option>
+       <option value="falc-wcfl2-04">FALC-WCFL2-04</option>
+       <option value="falc-wcfl2-05">FALC-WCFL2-05</option>
+       <option value="falc-wcfl2-06">FALC-WCFL2-06</option>
+       <option value="falc-wcfl2-07">FALC-WCFL2-07</option>
+       <option value="falc-wcfl2-08">FALC-WCFL2-08</option>
+       <option value="falc-wcfl2-09">FALC-WCFL2-09</option>
+       <option value="falc-wcfl2-10">FALC-WCFL2-10</option>
+       <option value="falc-wcfl2-11">FALC-WCFL2-11</option>
+       <option value="falc-wcfl2-12">FALC-WCFL2-12</option>
+       </select><br />
+       <h3>Select Command</h3>
+      <select name="command">
+       <option selected="selected" value="bgp">show bgp {option}</option>
+       <option value="ospf">show ospf {option}</option>
+       <option value="route">show route</option>
+       <option value="log">show log {option}</option>
+       <option value="arp">show arp</option>
+       <option value="esw">show ethernet-switching</option>
+       <option value="firewall">show firewall</option>
+       <option value="interface">show interface</option>
+       <option value="configuration">show configuration</option>
+       <option value="health">System Health Summary</option>
+       </select><br />
+       <br />
+       <b>Options</b> <br />
+       include '|' for piped commands<br />
+       <input name="options" style="width: 227px" type="text" /><br />
+       <br />
+       <br />
+       <input name="Submit1" type="submit" value="Run" /></form>
+</td>
+
+</tr>
+<tr>
+<td>
+<h1>WAN and Remote Routers</h1>
+<h3>Select Search Type</h3>
+<form action="/cgi-bin/look.py" method="get">
+       <select name="router">
+       <option selected="selected" value="F-A-CNBJS01-WR01-H-3200">Beijing, China (WAN)</option>
+       <option value="F-A-HKKWN01-WR01-H-3200">Hong Kong (WAN)</option>
+       <option value="F-E-FRLCN01-WR01-H-3200">Le Chesnay, France (WAN)</option>
+       <option value="F-E-DEMUC01-WR01-H-3200">Munich, Germany (WAN)</option>
+       <option value="F-A-KRSEL01-WR01-H-3200">Seoul, South Korea (WAN)</option>
+       <option value="F-A-CNSHA01-LR01-H-3200">Shanghai, China (LAN)</option>
+       <option value="F-A-CNSHA01-WR01-H-3200">Shanghai, China (WAN)</option>
+       <option value="F-A-SGSIN01-WR01-H-3200">Singapore (WAN)</option>
+       <option value="F-A-AUSYD01-WR01-H-3200">Sydney, Australia (WAN)</option>
+       <option value="F-A-TWTXG01-LR01-H-3200">Taichung, Taiwan (LAN)</option>
+       <option value="F-A-TWTXG01-WR01-H-3200">Taichung, Taiwan (WAN)</option>
+       <option value="F-A-TWTPE01-WR01-H-3200">Taipei, Taiwan (WAN)</option>
+       <option value="F-A-JPTYO01-WR01-H-3200">Tokyo, Japan (WAN)</option>
+       <option value="F-E-FRTLS01-WR01-H-3200">Toulouse, France (WAN)</option>
+       </select><br />
+       <h3>Select Command</h3>
+      <select name="command">
+       <option selected="selected" value="bgp">show bgp {option}</option>
+       <option value="ospf">show ospf {option}</option>
+       <option value="route">show route {option}</option>
+       <option value="log">show log {option}</option>
+       <option value="arp">show arp</option>
+       <option value="esw">show ethernet-switching {option}</option>
+       <option value="firewall">show firewall</option>
+       <option value="interface">show interface</option>
+       <option value="configuration">show configuration</option>
+       <option value="health">System Health Summary</option>
+       </select><br />
+       <br />
+       <b>Options</b> <br />
+       include '|' for piped commands<br />
+       <input name="options" style="width: 227px" type="text" /><br />
+       <br />
+       <br />
+       <input name="Submit1" type="submit" value="Run" /></form>
+</td>
+
+<td>
+<h1>Palo Alto Firewalls</h1>
+<h1>Coming Soon!!!</h1> 
+</td>
+
+</tr>
+
+
+
+</body>
+
+</html>
+
